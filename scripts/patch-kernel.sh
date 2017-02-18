@@ -10,6 +10,9 @@ targetdir=${1-.}
 patchdir=${2-../kernel-patches}
 patchpattern=${3-*}
 
+/usr/bin/printf "\e[48;5;%dm$0:\e[0m %s\n" 244 "$*"
+
+
 if [ ! -d "${targetdir}" ] ; then
     echo "Aborting.  '${targetdir}' is not a directory."
     exit 1
@@ -36,12 +39,34 @@ for i in ${patchdir}/${patchpattern} ; do
     esac
     [ -d "${i}" ] && echo "Ignoring subdirectory ${i}" && continue	
     echo ""
-    echo "Applying ${i} using ${type}: " 
-    ${uncomp} ${i} | ${PATCH:-patch} -f -p1 -d ${targetdir}
-    if [ $? != 0 ] ; then
-        echo "Patch failed!  Please fix $i!"
-	exit 1
-    fi
+
+
+	# Test if we could reverse the patch and then skip it.
+	# if patch --dry-run --reverse --force -i  >/dev/null 2>&1
+	if ${uncomp} ${i} | ${PATCH:-patch} --dry-run --reverse --force -p1 -d ${targetdir} >/dev/null 2>&1
+	then
+  		echo ">>>>>>> Patch already applied (skipping): " $(basename $i)
+	else # patch not yet applied
+
+		# LAHA
+		/usr/bin/printf "Applying \e[48;5;247m${i}\e[0m\n"
+		# echo "${uncomp} ${i} | ${PATCH:-patch} -N -p1 -d ${targetdir}"
+		# LAHA
+
+		# echo "Applying ${i} using ${type}: " 
+		${uncomp} ${i} | ${PATCH:-patch} -N -p1 -d ${targetdir}
+		if [ $? != 0 ] ; then
+			echo "\n"
+			echo "Patch failed:"
+			echo "##############################################################"
+ 			echo "Patch:  $(basename $i)"
+			echo "Target: $targetdir"
+			echo "##############################################################"
+			echo "\n\n\n"
+			exit 1
+		fi
+	fi
+
 done
 
 # Check for rejects...
