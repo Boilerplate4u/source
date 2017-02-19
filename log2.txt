@@ -1,0 +1,10 @@
+[33m make[1] world[m
+[33m make[2] target/compile[m
+[33m make[3] -C target/linux compile[m
+make[4]: *** [/home/lars/src/lede/build_dir/target-mips_24kc_musl/linux-ar71xx_mikrotik/linux-4.9.10/.prepared_95596dc1f56283848045082afe8cd806] Error 1
+make[3]: *** [compile] Error 2
+make[2]: *** [target/linux/compile] Error 2
+make[1]: *** [/home/lars/src/lede/staging_dir/target-mips_24kc_musl/stamp/.target_compile] Error 2
+make -r world: build failed. Please re-run make with -j1 V=s to see what's going on
+/home/lars/src/lede/include/toplevel.mk:197: recipe for target 'world' failed
+make: *** [world] Error 1

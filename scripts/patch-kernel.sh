@@ -45,7 +45,9 @@ for i in ${patchdir}/${patchpattern} ; do
 	# if patch --dry-run --reverse --force -i  >/dev/null 2>&1
 	if ${uncomp} ${i} | ${PATCH:-patch} --dry-run --reverse --force -p1 -d ${targetdir} >/dev/null 2>&1
 	then
-  		echo ">>>>>>> Patch already applied (skipping): " $(basename $i)
+  		echo ">>>> Patch already applied (skipping): " $(basename $i)
+		echo ">>>> Moving to $patchdir/upstreamed"
+		mv $i "$patchdir/upstreamed"
 	else # patch not yet applied
 
 		# LAHA
@@ -62,8 +64,10 @@ for i in ${patchdir}/${patchpattern} ; do
  			echo "Patch:  $(basename $i)"
 			echo "Target: $targetdir"
 			echo "##############################################################"
+			echo "Moving to $patchdir/failed"
+			mv $i "$patchdir/failed"
 			echo "\n\n\n"
-			exit 1
+			# exit 1
 		fi
 	fi
 
