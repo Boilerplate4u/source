@@ -1,0 +1,13 @@
+--- a/include/net/ipv6.h
++++ b/include/net/ipv6.h
+@@ -485,7 +487,9 @@ static inline bool ipv6_prefix_equal(con
+ 
+ 	/* check incomplete u32 in prefix */
+ 	pbi = prefixlen & 0x1f;
+-	if (pbi && ((a1[pdw] ^ a2[pdw]) & htonl((0xffffffff) << (32 - pbi))))
++	pbia1 = net_hdr_word(&a1[pdw]);
++	pbia2 = net_hdr_word(&a2[pdw]);
++	if (pbi && ((pbia1 ^ pbia2) & htonl((0xffffffff) << (32 - pbi))))
+ 		return false;
+ 
+ 	return true;

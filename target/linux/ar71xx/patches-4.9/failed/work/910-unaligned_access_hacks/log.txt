@@ -1,0 +1,168 @@
+01-checksum.h.0.patch
+patching file arch/mips/include/asm/checksum.h
+02-checksum.h.1.patch
+patching file arch/mips/include/asm/checksum.h
+Reversed (or previously applied) patch detected!  Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file arch/mips/include/asm/checksum.h.rej
+03-ip.h.0.patch
+patching file include/uapi/linux/ip.h
+04-ipv6.h.0.patch
+patching file include/uapi/linux/ipv6.h
+05-tcp.h.0.patch
+patching file include/uapi/linux/tcp.h
+06-tcp.h.1.patch
+patching file include/uapi/linux/tcp.h
+07-udp.h.0.patch
+patching file include/uapi/linux/udp.h
+08-nf_conntrack_l3proto_ipv4.c.0.patch
+patching file net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c
+09-icmp.h.0.patch
+patching file include/uapi/linux/icmp.h
+Hunk #1 succeeded at 81 with fuzz 2 (offset 1 line).
+10-in6.h.0.patch
+patching file include/uapi/linux/in6.h
+11-tcp_ipv6.c.0.patch
+patching file net/ipv6/tcp_ipv6.c
+12-tcp_ipv6.c.1.patch
+patching file net/ipv6/tcp_ipv6.c
+Hunk #1 succeeded at 790 (offset 11 lines).
+13-ipv6.h.0.patch
+patching file include/linux/ipv6.h
+14-datagram.c.0.patch
+patching file net/ipv6/datagram.c
+Hunk #1 succeeded at 475 (offset 46 lines).
+15-datagram.c.1.patch
+patching file net/ipv6/datagram.c
+Hunk #1 succeeded at 818 (offset 52 lines).
+16-ip6_gre.c.0.patch
+patching file net/ipv6/ip6_gre.c
+17-ip6_gre.c.1.patch
+patching file net/ipv6/ip6_gre.c
+Hunk #1 FAILED at 476.
+1 out of 1 hunk FAILED -- saving rejects to file net/ipv6/ip6_gre.c.rej
+18-ip6_gre.c.2.patch
+patching file net/ipv6/ip6_gre.c
+Hunk #1 FAILED at 742.
+1 out of 1 hunk FAILED -- saving rejects to file net/ipv6/ip6_gre.c.rej
+19-ip6_gre.c.3.patch
+patching file net/ipv6/ip6_gre.c
+Hunk #1 succeeded at 596 (offset -242 lines).
+20-ip6_tunnel.c.0.patch
+patching file net/ipv6/ip6_tunnel.c
+Hunk #1 FAILED at 1397.
+1 out of 1 hunk FAILED -- saving rejects to file net/ipv6/ip6_tunnel.c.rej
+21-exthdrs.c.0.patch
+patching file net/ipv6/exthdrs.c
+Hunk #1 succeeded at 574 with fuzz 2 (offset 1 line).
+22-types.h.0.patch
+patching file include/linux/types.h
+Hunk #1 succeeded at 231 (offset -1 lines).
+23-af_inet.c.0.patch
+patching file net/ipv4/af_inet.c
+Hunk #1 succeeded at 1318 (offset -3 lines).
+24-route.c.0.patch
+patching file net/ipv4/route.c
+25-tcp_output.c.0.patch
+patching file net/ipv4/tcp_output.c
+Hunk #1 succeeded at 448 (offset -3 lines).
+26-tcp_output.c.1.patch
+patching file net/ipv4/tcp_output.c
+Hunk #1 succeeded at 502 (offset 2 lines).
+27-tcp_output.c.2.patch
+patching file net/ipv4/tcp_output.c
+Hunk #1 succeeded at 525 (offset 3 lines).
+28-igmp.c.0.patch
+patching file net/ipv4/igmp.c
+Hunk #1 succeeded at 509 (offset 4 lines).
+29-igmp.h.0.patch
+patching file include/uapi/linux/igmp.h
+30-igmp.h.1.patch
+patching file include/uapi/linux/igmp.h
+31-igmp.h.2.patch
+patching file include/uapi/linux/igmp.h
+32-igmp.h.3.patch
+patching file include/uapi/linux/igmp.h
+33-flow_dissector.c.0.patch
+patching file net/core/flow_dissector.c
+Hunk #1 succeeded at 84 (offset -11 lines).
+34-icmpv6.h.0.patch
+patching file include/uapi/linux/icmpv6.h
+35-ndisc.h.0.patch
+patching file include/net/ndisc.h
+Hunk #1 succeeded at 87 (offset 11 lines).
+36-ndisc.h.1.patch
+patching file include/net/ndisc.h
+Hunk #1 succeeded at 365 (offset 217 lines).
+37-cls_u32.c.0.patch
+patching file net/sched/cls_u32.c
+Hunk #1 succeeded at 159 (offset 8 lines).
+38-cls_u32.c.1.patch
+patching file net/sched/cls_u32.c
+Hunk #1 succeeded at 212 (offset 8 lines).
+39-ip6_offload.c.0.patch
+patching file net/ipv6/ip6_offload.c
+Hunk #1 succeeded at 217 (offset -5 lines).
+40-addrconf.h.0.patch
+patching file include/net/addrconf.h
+Hunk #1 succeeded at 44 (offset 1 line).
+41-inet_ecn.h.0.patch
+patching file include/net/inet_ecn.h
+Hunk #1 succeeded at 124 with fuzz 2.
+42-inet_ecn.h.1.patch
+patching file include/net/inet_ecn.h
+Hunk #1 succeeded at 135 (offset 1 line).
+43-ipv6.h.0.patch
+patching file include/net/ipv6.h
+44-ipv6.h.1.patch
+patching file include/net/ipv6.h
+Hunk #1 succeeded at 449 (offset 32 lines).
+45-ipv6.h.2.patch
+patching file include/net/ipv6.h
+Hunk #1 succeeded at 509 (offset 32 lines).
+46-ipv6.h.3.patch
+patching file include/net/ipv6.h
+Hunk #1 succeeded at 519 (offset 34 lines).
+47-ipv6.h.4.patch
+patching file include/net/ipv6.h
+Hunk #1 succeeded at 665 (offset 36 lines).
+48-ipv6.h.5.patch
+patching file include/net/ipv6.h
+Hunk #1 succeeded at 835 (offset 36 lines).
+49-secure_seq.h.0.patch
+patching file include/net/secure_seq.h
+50-in.h.0.patch
+patching file include/uapi/linux/in.h
+51-secure_seq.c.0.patch
+patching file net/core/secure_seq.c
+52-secure_seq.c.1.patch
+patching file net/core/secure_seq.c
+Hunk #1 succeeded at 69 (offset 1 line).
+53-secure_seq.c.2.patch
+patching file net/core/secure_seq.c
+Hunk #1 succeeded at 148 (offset 2 lines).
+54-secure_seq.c.3.patch
+patching file net/core/secure_seq.c
+Hunk #1 succeeded at 157 (offset 3 lines).
+55-ip6_fib.c.0.patch
+patching file net/ipv6/ip6_fib.c
+Hunk #1 succeeded at 136 (offset -2 lines).
+56-nf_conntrack_proto_tcp.c.0.patch
+patching file net/netfilter/nf_conntrack_proto_tcp.c
+Hunk #1 succeeded at 452 (offset -4 lines).
+57-xfrm_input.c.0.patch
+patching file net/xfrm/xfrm_input.c
+58-tcp_input.c.0.patch
+patching file net/ipv4/tcp_input.c
+Hunk #1 succeeded at 3886 (offset 68 lines).
+59-if_pppox.h.0.patch
+patching file include/uapi/linux/if_pppox.h
+Hunk #1 succeeded at 50 (offset 3 lines).
+60-nf_log_ipv6.c.0.patch
+patching file net/ipv6/netfilter/nf_log_ipv6.c
+61-neighbour.h.0.patch
+patching file include/net/neighbour.h
+62-arp_tables.h.0.patch
+patching file include/uapi/linux/netfilter_arp/arp_tables.h
+Hunk #1 succeeded at 69 (offset 1 line).
+63-utils.c.0.patch
+patching file net/core/utils.c

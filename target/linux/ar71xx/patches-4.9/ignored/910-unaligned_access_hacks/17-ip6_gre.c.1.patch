@@ -1,0 +1,16 @@
+--- a/net/ipv6/ip6_gre.c
++++ b/net/ipv6/ip6_gre.c
+@@ -476,11 +476,11 @@ static int ip6gre_rcv(struct sk_buff *sk
+ 			offset += 4;
+ 		}
+ 		if (flags&GRE_KEY) {
+-			key = *(__be32 *)(h + offset);
++			key = net_hdr_word(h + offset);
+ 			offset += 4;
+ 		}
+ 		if (flags&GRE_SEQ) {
+-			seqno = ntohl(*(__be32 *)(h + offset));
++			seqno = ntohl(net_hdr_word(h + offset));
+ 			offset += 4;
+ 		}
+ 	}

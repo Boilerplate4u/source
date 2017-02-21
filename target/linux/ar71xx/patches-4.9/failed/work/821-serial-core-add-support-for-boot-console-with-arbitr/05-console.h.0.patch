@@ -1,0 +1,10 @@
+--- a/include/linux/console.h
++++ b/include/linux/console.h
+@@ -128,6 +128,7 @@ struct console {
+ 	short	flags;
+ 	short	index;
+ 	int	cflag;
++	int	baud;
+ 	void	*data;
+ 	struct	 console *next;
+ };

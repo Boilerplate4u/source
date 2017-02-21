@@ -1,0 +1,11 @@
+--- a/net/ipv6/datagram.c
++++ b/net/ipv6/datagram.c
+@@ -429,7 +429,7 @@ int ipv6_recv_error(struct sock *sk, str
+ 				ipv6_iface_scope_id(&sin->sin6_addr,
+ 						    IP6CB(skb)->iif);
+ 		} else {
+-			ipv6_addr_set_v4mapped(*(__be32 *)(nh + serr->addr_offset),
++			ipv6_addr_set_v4mapped(net_hdr_word(nh + serr->addr_offset),
+ 					       &sin->sin6_addr);
+ 			sin->sin6_scope_id = 0;
+ 		}

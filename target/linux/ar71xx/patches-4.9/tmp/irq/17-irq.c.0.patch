@@ -1,0 +1,13 @@
+--- a/arch/mips/ath79/irq.c
++++ b/arch/mips/ath79/irq.c
+@@ -183,7 +183,9 @@ void __init arch_init_irq(void)
+ 		 soc_is_ar933x() ||
+ 		 soc_is_ar934x() ||
+ 		 soc_is_qca953x() ||
+-		 soc_is_qca955x())
++		 soc_is_qca955x() ||
++		 soc_is_qca956x() ||
++		 soc_is_tp9343())
+ 		misc_is_ar71xx = false;
+ 	else
+ 		BUG();

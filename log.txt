@@ -1,0 +1,1681 @@
+make[1]: Entering directory '/home/lars/src/lede'
+cd "/home/lars/src/lede"; git log --format=%h -1 toolchain > /home/lars/src/lede/tmp/.ver_check
+cmp -s /home/lars/src/lede/tmp/.ver_check /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp/.ver_check || { \
+	rm -rf /home/lars/src/lede/build_dir/target-mips_24kc_musl /home/lars/src/lede/staging_dir/target-mips_24kc_musl /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl; \
+	mkdir -p /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp; \
+	mv /home/lars/src/lede/tmp/.ver_check /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp/.ver_check; \
+}
+make[2]: Entering directory '/home/lars/src/lede'
+cd "/home/lars/src/lede"; git log --format=%h -1 toolchain > /home/lars/src/lede/tmp/.ver_check
+cmp -s /home/lars/src/lede/tmp/.ver_check /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp/.ver_check || { \
+	rm -rf /home/lars/src/lede/build_dir/target-mips_24kc_musl /home/lars/src/lede/staging_dir/target-mips_24kc_musl /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl; \
+	mkdir -p /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp; \
+	mv /home/lars/src/lede/tmp/.ver_check /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp/.ver_check; \
+}
++ mkdir -p /home/lars/src/lede/staging_dir/target-mips_24kc_musl
++ cd /home/lars/src/lede/staging_dir/target-mips_24kc_musl
++ mkdir -p bin lib include stamp
+mkdir -p /home/lars/src/lede/build_dir/target-mips_24kc_musl/stamp
+touch /home/lars/src/lede/staging_dir/target-mips_24kc_musl/.prepared
++ mkdir -p /home/lars/src/lede/staging_dir/host
++ cd /home/lars/src/lede/staging_dir/host
++ mkdir -p bin lib include stamp
+mkdir -p /home/lars/src/lede/build_dir/host/stamp /home/lars/src/lede/staging_dir/host/include/sys
+install -m0644 /home/lars/src/lede/tools/include/*.h /home/lars/src/lede/staging_dir/host/include/
+install -m0644 /home/lars/src/lede/tools/include/sys/*.h /home/lars/src/lede/staging_dir/host/include/sys/
+ln -sf lib /home/lars/src/lede/staging_dir/host/lib64
+touch /home/lars/src/lede/staging_dir/host/.prepared
+make[3]: Entering directory '/home/lars/src/lede/tools/flock'
+make[3]: Leaving directory '/home/lars/src/lede/tools/flock'
+make[3]: Entering directory '/home/lars/src/lede/tools/sed'
+make[3]: Leaving directory '/home/lars/src/lede/tools/sed'
+make[3]: Entering directory '/home/lars/src/lede/tools/patch'
+make[3]: Leaving directory '/home/lars/src/lede/tools/patch'
+make[3]: Entering directory '/home/lars/src/lede/tools/xz'
+make[3]: Leaving directory '/home/lars/src/lede/tools/xz'
+make[3]: Entering directory '/home/lars/src/lede/tools/tar'
+make[3]: Leaving directory '/home/lars/src/lede/tools/tar'
+make[3]: Entering directory '/home/lars/src/lede/tools/ccache'
+mkdir -p /home/lars/src/lede/dl
+SHELL= flock /home/lars/src/lede/tmp/.ccache-3.3.2.tar.xz.flock -c '  	/home/lars/src/lede/scripts/download.pl "/home/lars/src/lede/dl" "ccache-3.3.2.tar.xz" "907685cb23d8f82074b8d1a9b4ebabb36914d151ac7b96a840c68c08d1a14530" "" "https://download.samba.org/pub/ccache/" "https://samba.org/ftp/ccache/"    '
+Can't exec "curl": No such file or directory at /home/lars/src/lede/scripts/download.pl line 77.
+converted 'https://download.samba.org/pub/ccache/ccache-3.3.2.tar.xz' (ANSI_X3.4-1968) -> 'https://download.samba.org/pub/ccache/ccache-3.3.2.tar.xz' (UTF-8)
+--2017-02-21 10:13:08--  https://download.samba.org/pub/ccache/ccache-3.3.2.tar.xz
+Resolving download.samba.org (download.samba.org)... 144.76.82.156, 2a01:4f8:192:486::443:2
+Connecting to download.samba.org (download.samba.org)|144.76.82.156|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 312108 (305K) [application/x-xz]
+Saving to: 'STDOUT'
+
+     0K .......... .......... .......... .......... .......... 16%  950K 0s
+    50K .......... .......... .......... .......... .......... 32% 1.87M 0s
+   100K .......... .......... .......... .......... .......... 49%  102M 0s
+   150K .......... .......... .......... .......... .......... 65% 1.88M 0s
+   200K .......... .......... .......... .......... .......... 82%  139M 0s
+   250K .......... .......... .......... .......... .......... 98%  120M 0s
+   300K ....                                                  100%  344M=0.1s
+
+2017-02-21 10:13:08 (2.81 MB/s) - written to stdout [312108/312108]
+
+. /home/lars/src/lede/include/shell.sh; xzcat /home/lars/src/lede/dl/ccache-3.3.2.tar.xz | tar -C /home/lars/src/lede/build_dir/host/ccache-3.3.2/.. -xf - 
+[ ! -d ./src/ ] || cp -fpR ./src/* /home/lars/src/lede/build_dir/host/ccache-3.3.2
+[48;5;244m/home/lars/src/lede/scripts/patch-kernel.sh:[0m /home/lars/src/lede/build_dir/host/ccache-3.3.2 ./patches
+
+Applying [48;5;247m./patches/100-honour-copts.patch[0m
+patching file ccache.c
+
+Applying [48;5;247m./patches/110-disable-assembler-support.patch[0m
+patching file language.c
+touch /home/lars/src/lede/build_dir/host/ccache-3.3.2/.prepared556cd9306c424dbea82eb21e0c541766_n
+(cd /home/lars/src/lede/build_dir/host/ccache-3.3.2/; if [ -x configure ]; then cp -fpR /home/lars/src/lede/scripts/config.{guess,sub} /home/lars/src/lede/build_dir/host/ccache-3.3.2// && CC="ccache gcc" CFLAGS="-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CPPFLAGS="-I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " LDFLAGS="-L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib " CONFIG_SHELL="/usr/bin/env bash" CC="gcc"  bash ./configure --target=x86_64-linux-gnu --host=x86_64-linux-gnu --build=x86_64-linux-gnu --program-prefix="" --program-suffix="" --prefix=/home/lars/src/lede/staging_dir/host --exec-prefix=/home/lars/src/lede/staging_dir/host --sysconfdir=/home/lars/src/lede/staging_dir/host/etc --localstatedir=/home/lars/src/lede/staging_dir/host/var --sbindir=/home/lars/src/lede/staging_dir/host/bin ; fi )
+configure: Configuring ccache
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for x86_64-linux-gnu-gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for gcc option to accept ISO C99... -std=gnu99
+checking how to run the C preprocessor... gcc -std=gnu99 -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking for x86_64-linux-gnu-ar... x86_64-linux-gnu-ar
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for grep that handles long lines and -e... /home/lars/src/lede/staging_dir/host/bin/grep
+checking for egrep... /home/lars/src/lede/staging_dir/host/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for long long... yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for gethostname... yes
+checking for getopt_long... yes
+checking for getpwuid... yes
+checking for gettimeofday... yes
+checking for mkstemp... yes
+checking for realpath... yes
+checking for strndup... yes
+checking for strtok_r... yes
+checking for unsetenv... yes
+checking for utimes... yes
+checking for compar_fn_t in stdlib.h... yes
+checking for stdarg.h... yes
+checking for varargs.h... no
+checking for unsigned long long int... yes
+checking for vsnprintf... yes
+checking whether vsnprintf is C99 compliant... yes
+checking for snprintf... yes
+checking whether snprintf is C99 compliant... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for library containing cos... -lm
+checking for zlib >= 1.2.3... yes
+checking for gzdopen in -lz... yes
+checking whether byte ordering is bigendian... no
+checking for inline... inline
+checking for extern inline... no
+configure: Developer mode disabled
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+configure: now build ccache by running make
+touch /home/lars/src/lede/build_dir/host/ccache-3.3.2/.configured
+CFLAGS="-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CPPFLAGS="-I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CXXFLAGS="" LDFLAGS="-L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib " make -j1 -C /home/lars/src/lede/build_dir/host/ccache-3.3.2  
+make[4]: Entering directory '/home/lars/src/lede/build_dir/host/ccache-3.3.2'
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o main.o main.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o args.o args.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o ccache.o ccache.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o cleanup.o cleanup.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o compopt.o compopt.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o conf.o conf.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o counters.o counters.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o execute.o execute.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o exitfn.o exitfn.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o hash.o hash.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o hashutil.o hashutil.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o language.o language.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o lockfile.o lockfile.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o manifest.o manifest.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o mdfour.o mdfour.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o stats.o stats.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o unify.o unify.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o util.o util.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o version.o version.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o getopt_long.o getopt_long.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o hashtable.o hashtable.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o hashtable_itr.o hashtable_itr.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o murmurhashneutral2.o murmurhashneutral2.c
+gcc -std=gnu99 -DHAVE_CONFIG_H -DSYSCONFDIR=/home/lars/src/lede/staging_dir/host/etc -I. -I. -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -c -o snprintf.o snprintf.c
+gcc -std=gnu99 -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -Wall -W -o ccache main.o args.o ccache.o cleanup.o compopt.o conf.o counters.o execute.o exitfn.o hash.o hashutil.o language.o lockfile.o manifest.o mdfour.o stats.o unify.o util.o version.o getopt_long.o hashtable.o hashtable_itr.o murmurhashneutral2.o snprintf.o -L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib   -lm  -lz
+make[4]: Leaving directory '/home/lars/src/lede/build_dir/host/ccache-3.3.2'
+touch /home/lars/src/lede/build_dir/host/ccache-3.3.2/.built
+CFLAGS="-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CPPFLAGS="-I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CXXFLAGS="" LDFLAGS="-L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib " make -j1 -C /home/lars/src/lede/build_dir/host/ccache-3.3.2  install
+make[4]: Entering directory '/home/lars/src/lede/build_dir/host/ccache-3.3.2'
+/usr/bin/install -c -d /home/lars/src/lede/staging_dir/host/bin
+/usr/bin/install -c -m 755 ccache /home/lars/src/lede/staging_dir/host/bin
+/usr/bin/install -c -d /home/lars/src/lede/staging_dir/host/share/man/man1
+/usr/bin/install -c -m 644 ./ccache.1 /home/lars/src/lede/staging_dir/host/share/man/man1/
+make[4]: Leaving directory '/home/lars/src/lede/build_dir/host/ccache-3.3.2'
+install -d -m0755 /home/lars/src/lede/staging_dir/host/bin/
+cp -fpR ./files/* /home/lars/src/lede/staging_dir/host/bin/
+mkdir -p /home/lars/src/lede/staging_dir/host/stamp
+touch /home/lars/src/lede/build_dir/host/ccache-3.3.2/.built
+touch /home/lars/src/lede/staging_dir/host/stamp/.ccache_installed
+make[3]: Leaving directory '/home/lars/src/lede/tools/ccache'
+make[3]: Entering directory '/home/lars/src/lede/tools/m4'
+make[3]: Leaving directory '/home/lars/src/lede/tools/m4'
+make[3]: Entering directory '/home/lars/src/lede/tools/autoconf'
+make[3]: Leaving directory '/home/lars/src/lede/tools/autoconf'
+make[3]: Entering directory '/home/lars/src/lede/tools/pkg-config'
+make[3]: Leaving directory '/home/lars/src/lede/tools/pkg-config'
+make[3]: Entering directory '/home/lars/src/lede/tools/automake'
+make[3]: Leaving directory '/home/lars/src/lede/tools/automake'
+make[3]: Entering directory '/home/lars/src/lede/tools/missing-macros'
+make[3]: Leaving directory '/home/lars/src/lede/tools/missing-macros'
+make[3]: Entering directory '/home/lars/src/lede/tools/libtool'
+make[3]: Leaving directory '/home/lars/src/lede/tools/libtool'
+make[3]: Entering directory '/home/lars/src/lede/tools/gmp'
+make[3]: Leaving directory '/home/lars/src/lede/tools/gmp'
+make[3]: Entering directory '/home/lars/src/lede/tools/mpfr'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mpfr'
+make[3]: Entering directory '/home/lars/src/lede/tools/mpc'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mpc'
+make[3]: Entering directory '/home/lars/src/lede/tools/libelf'
+make[3]: Leaving directory '/home/lars/src/lede/tools/libelf'
+make[3]: Entering directory '/home/lars/src/lede/tools/expat'
+make[3]: Leaving directory '/home/lars/src/lede/tools/expat'
+make[3]: Entering directory '/home/lars/src/lede/tools/flex'
+make[3]: Leaving directory '/home/lars/src/lede/tools/flex'
+make[3]: Entering directory '/home/lars/src/lede/tools/bison'
+make[3]: Leaving directory '/home/lars/src/lede/tools/bison'
+make[3]: Entering directory '/home/lars/src/lede/tools/mklibs'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mklibs'
+make[3]: Entering directory '/home/lars/src/lede/tools/sstrip'
+make[3]: Leaving directory '/home/lars/src/lede/tools/sstrip'
+make[3]: Entering directory '/home/lars/src/lede/tools/make-ext4fs'
+make[3]: Leaving directory '/home/lars/src/lede/tools/make-ext4fs'
+make[3]: Entering directory '/home/lars/src/lede/tools/e2fsprogs'
+make[3]: Leaving directory '/home/lars/src/lede/tools/e2fsprogs'
+make[3]: Entering directory '/home/lars/src/lede/tools/mtd-utils'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mtd-utils'
+make[3]: Entering directory '/home/lars/src/lede/tools/libressl'
+make[3]: Leaving directory '/home/lars/src/lede/tools/libressl'
+make[3]: Entering directory '/home/lars/src/lede/tools/mkimage'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mkimage'
+make[3]: Entering directory '/home/lars/src/lede/tools/firmware-utils'
+make[3]: Leaving directory '/home/lars/src/lede/tools/firmware-utils'
+make[3]: Entering directory '/home/lars/src/lede/tools/patch-image'
+make[3]: Leaving directory '/home/lars/src/lede/tools/patch-image'
+make[3]: Entering directory '/home/lars/src/lede/tools/findutils'
+make[3]: Leaving directory '/home/lars/src/lede/tools/findutils'
+make[3]: Entering directory '/home/lars/src/lede/tools/quilt'
+make[3]: Leaving directory '/home/lars/src/lede/tools/quilt'
+make[3]: Entering directory '/home/lars/src/lede/tools/padjffs2'
+make[3]: Leaving directory '/home/lars/src/lede/tools/padjffs2'
+make[3]: Entering directory '/home/lars/src/lede/tools/mm-macros'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mm-macros'
+make[3]: Entering directory '/home/lars/src/lede/tools/cmake'
+make[3]: Leaving directory '/home/lars/src/lede/tools/cmake'
+make[3]: Entering directory '/home/lars/src/lede/tools/scons'
+make[3]: Leaving directory '/home/lars/src/lede/tools/scons'
+make[3]: Entering directory '/home/lars/src/lede/tools/bc'
+make[3]: Leaving directory '/home/lars/src/lede/tools/bc'
+make[3]: Entering directory '/home/lars/src/lede/tools/gengetopt'
+make[3]: Leaving directory '/home/lars/src/lede/tools/gengetopt'
+make[3]: Entering directory '/home/lars/src/lede/tools/patchelf'
+make[3]: Leaving directory '/home/lars/src/lede/tools/patchelf'
+make[3]: Entering directory '/home/lars/src/lede/tools/mtools'
+make[3]: Leaving directory '/home/lars/src/lede/tools/mtools'
+make[3]: Entering directory '/home/lars/src/lede/tools/dosfstools'
+make[3]: Leaving directory '/home/lars/src/lede/tools/dosfstools'
+make[3]: Entering directory '/home/lars/src/lede/tools/lzma-old'
+make[3]: Leaving directory '/home/lars/src/lede/tools/lzma-old'
+make[3]: Entering directory '/home/lars/src/lede/tools/squashfs'
+make[3]: Leaving directory '/home/lars/src/lede/tools/squashfs'
+make[3]: Entering directory '/home/lars/src/lede/tools/kernel2minor'
+make[3]: Leaving directory '/home/lars/src/lede/tools/kernel2minor'
+make[3]: Entering directory '/home/lars/src/lede/tools/lzma'
+make[3]: Leaving directory '/home/lars/src/lede/tools/lzma'
+make[3]: Entering directory '/home/lars/src/lede/tools/squashfs4'
+make[3]: Leaving directory '/home/lars/src/lede/tools/squashfs4'
+make[3]: Entering directory '/home/lars/src/lede/tools/b43-tools'
+make[3]: Leaving directory '/home/lars/src/lede/tools/b43-tools'
+make[2]: Leaving directory '/home/lars/src/lede'
+make[2]: Entering directory '/home/lars/src/lede'
+cd "/home/lars/src/lede"; git log --format=%h -1 toolchain > /home/lars/src/lede/tmp/.ver_check
+cmp -s /home/lars/src/lede/tmp/.ver_check /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp/.ver_check || { \
+	rm -rf /home/lars/src/lede/build_dir/target-mips_24kc_musl /home/lars/src/lede/staging_dir/target-mips_24kc_musl /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl; \
+	mkdir -p /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp; \
+	mv /home/lars/src/lede/tmp/.ver_check /home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/stamp/.ver_check; \
+}
+make[3]: Entering directory '/home/lars/src/lede/toolchain/gdb'
+. /home/lars/src/lede/include/shell.sh; xzcat /home/lars/src/lede/dl/gdb-7.12.1.tar.xz | tar -C /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/.. -xf - 
+[ ! -d ./src/ ] || cp -fpR ./src/* /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1
+[48;5;244m/home/lars/src/lede/scripts/patch-kernel.sh:[0m /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1 ./patches
+
+Applying [48;5;247m./patches/100-no_extern_inline.patch[0m
+patching file sim/common/sim-arange.c
+patching file sim/common/sim-arange.h
+
+Applying [48;5;247m./patches/110-no_testsuite.patch[0m
+patching file gdb/configure
+
+Applying [48;5;247m./patches/120-fix-compile-flag-mismatch.patch[0m
+patching file gdb/gdbserver/configure
+touch /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/.prepared
+(cd /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/; if [ -x configure ]; then cp -fpR /home/lars/src/lede/scripts/config.{guess,sub} /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1// && CC="ccache gcc" CFLAGS="-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CPPFLAGS="-I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " LDFLAGS="-L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib " CONFIG_SHELL="/usr/bin/env bash" gdb_cv_func_sigsetjmp=yes  bash ./configure --prefix=/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=mips-openwrt-linux-musl --disable-werror --without-uiout --disable-tui --disable-gdbtk --without-x --without-included-gettext --enable-threads --with-expat --without-python --disable-binutils --disable-ld --disable-gas --disable-sim ; fi )
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... mips-openwrt-linux-musl
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln works... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /home/lars/src/lede/staging_dir/host/bin/sed
+checking for gawk... gawk
+configure: WARNING: neither ld nor gold are enabled
+checking for x86_64-linux-gnu-gcc... ccache gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking for x86_64-linux-gnu-g++... x86_64-linux-gnu-g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether x86_64-linux-gnu-g++ accepts -g... yes
+checking whether g++ accepts -static-libstdc++ -static-libgcc... yes
+checking for x86_64-linux-gnu-gnatbind... no
+checking for gnatbind... no
+checking for x86_64-linux-gnu-gnatmake... no
+checking for gnatmake... no
+checking whether compiler driver understands Ada... no
+checking how to compare bootstrapped objects... cmp --ignore-initial=16 $$f1 $$f2
+checking for objdir... .libs
+checking for isl 0.16, 0.15, or deprecated 0.14... no
+recommended isl version is 0.16 or 0.15, the minimum required isl version 0.14 is deprecated
+checking for isl 0.16 or 0.15... no
+*** This configuration is not supported in the following subdirectories:
+     sim
+    (Any other directories should still work fine.)
+checking for default BUILD_CONFIG... 
+checking for --enable-vtable-verify... no
+checking for bison... bison -y
+checking for bison... bison
+checking for gm4... /home/lars/src/lede/staging_dir/host/bin/m4
+checking for flex... flex
+checking for flex... flex
+checking for makeinfo... makeinfo
+checking for expect... no
+checking for runtest... no
+checking for x86_64-linux-gnu-ar... x86_64-linux-gnu-ar
+checking for x86_64-linux-gnu-as... x86_64-linux-gnu-as
+checking for x86_64-linux-gnu-dlltool... no
+checking for dlltool... no
+checking for x86_64-linux-gnu-ld... x86_64-linux-gnu-ld
+checking for x86_64-linux-gnu-lipo... no
+checking for lipo... no
+checking for x86_64-linux-gnu-nm... x86_64-linux-gnu-nm
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking for x86_64-linux-gnu-strip... x86_64-linux-gnu-strip
+checking for x86_64-linux-gnu-windres... no
+checking for windres... no
+checking for x86_64-linux-gnu-windmc... no
+checking for windmc... no
+checking for x86_64-linux-gnu-objcopy... x86_64-linux-gnu-objcopy
+checking for x86_64-linux-gnu-objdump... x86_64-linux-gnu-objdump
+checking for x86_64-linux-gnu-readelf... x86_64-linux-gnu-readelf
+checking for mips-openwrt-linux-musl-cc... no
+checking for mips-openwrt-linux-musl-gcc... no
+checking for mips-openwrt-linux-musl-c++... no
+checking for mips-openwrt-linux-musl-g++... no
+checking for mips-openwrt-linux-musl-cxx... no
+checking for mips-openwrt-linux-musl-gxx... no
+checking for mips-openwrt-linux-musl-gcc... no
+checking for mips-openwrt-linux-musl-gcj... no
+checking for mips-openwrt-linux-musl-gfortran... no
+checking for mips-openwrt-linux-musl-gccgo... no
+checking for mips-openwrt-linux-musl-ar... no
+checking for mips-openwrt-linux-musl-as... no
+checking for mips-openwrt-linux-musl-dlltool... no
+checking for mips-openwrt-linux-musl-ld... no
+checking for mips-openwrt-linux-musl-lipo... no
+checking for mips-openwrt-linux-musl-nm... no
+checking for mips-openwrt-linux-musl-objcopy... no
+checking for mips-openwrt-linux-musl-objdump... no
+checking for mips-openwrt-linux-musl-ranlib... no
+checking for mips-openwrt-linux-musl-readelf... no
+checking for mips-openwrt-linux-musl-strip... no
+checking for mips-openwrt-linux-musl-windres... no
+checking for mips-openwrt-linux-musl-windmc... no
+checking where to find the target ar... pre-installed
+checking where to find the target as... pre-installed
+checking where to find the target cc... pre-installed
+checking where to find the target c++... pre-installed
+checking where to find the target c++ for libstdc++... pre-installed
+checking where to find the target dlltool... pre-installed
+checking where to find the target gcc... pre-installed
+checking where to find the target gcj... pre-installed
+checking where to find the target gfortran... pre-installed
+checking where to find the target gccgo... pre-installed
+checking where to find the target ld... pre-installed
+checking where to find the target lipo... pre-installed
+checking where to find the target nm... pre-installed
+checking where to find the target objcopy... pre-installed
+checking where to find the target objdump... pre-installed
+checking where to find the target ranlib... pre-installed
+checking where to find the target readelf... pre-installed
+checking where to find the target strip... pre-installed
+checking where to find the target windres... pre-installed
+checking where to find the target windmc... pre-installed
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile
+touch /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/.configured
+CFLAGS="-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CPPFLAGS="-I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " CXXFLAGS="" LDFLAGS="-L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib " make  -C /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1  
+make[4]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1'
+make[5]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1'
+Configuring in ./libiberty
+configure: creating cache ./config.cache
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for makeinfo... /home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/missing makeinfo --split-size=5000000
+configure: WARNING:
+*** Makeinfo is missing. Info documentation will not be built.
+checking for perl... perl
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for x86_64-linux-gnu-ar... x86_64-linux-gnu-ar
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking whether to install libiberty headers and static library... no
+configure: target_header_dir = 
+checking for x86_64-linux-gnu-gcc... ccache gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... ccache gcc -E
+checking for grep that handles long lines and -e... /home/lars/src/lede/staging_dir/host/bin/grep
+checking for egrep... /home/lars/src/lede/staging_dir/host/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking whether ccache gcc supports -W... yes
+checking whether ccache gcc supports -Wall... yes
+checking whether ccache gcc supports -Wwrite-strings... yes
+checking whether ccache gcc supports -Wc++-compat... yes
+checking whether ccache gcc supports -Wstrict-prototypes... yes
+checking whether ccache gcc supports -pedantic ... yes
+checking whether ccache gcc and cc understand -c and -o together... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether byte ordering is bigendian... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for sys/file.h... yes
+checking for sys/param.h... yes
+checking for limits.h... yes
+checking for stdlib.h... (cached) yes
+checking for malloc.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/time.h... yes
+checking for time.h... yes
+checking for sys/resource.h... yes
+checking for sys/stat.h... (cached) yes
+checking for sys/mman.h... yes
+checking for fcntl.h... yes
+checking for alloca.h... yes
+checking for sys/pstat.h... no
+checking for sys/sysmp.h... no
+checking for sys/sysinfo.h... yes
+checking for machine/hal_sysinfo.h... no
+checking for sys/table.h... no
+checking for sys/sysctl.h... yes
+checking for sys/systemcfg.h... no
+checking for stdint.h... (cached) yes
+checking for stdio_ext.h... yes
+checking for process.h... no
+checking for sys/prctl.h... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether errno must be declared... no
+checking size of int... 4
+checking size of long... 8
+checking size of size_t... 8
+checking for long long... yes
+checking size of long long... 8
+checking for a 64-bit type... uint64_t
+checking for intptr_t... yes
+checking for uintptr_t... yes
+checking for ssize_t... yes
+checking for pid_t... yes
+checking for library containing strerror... none required
+checking for asprintf... yes
+checking for atexit... yes
+checking for basename... yes
+checking for bcmp... yes
+checking for bcopy... yes
+checking for bsearch... yes
+checking for bzero... yes
+checking for calloc... yes
+checking for clock... yes
+checking for ffs... yes
+checking for getcwd... yes
+checking for getpagesize... yes
+checking for gettimeofday... yes
+checking for index... yes
+checking for insque... yes
+checking for memchr... yes
+checking for memcmp... yes
+checking for memcpy... yes
+checking for memmem... yes
+checking for memmove... yes
+checking for mempcpy... yes
+checking for memset... yes
+checking for mkstemps... yes
+checking for putenv... yes
+checking for random... yes
+checking for rename... yes
+checking for rindex... yes
+checking for setenv... yes
+checking for snprintf... yes
+checking for sigsetmask... yes
+checking for stpcpy... yes
+checking for stpncpy... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strncasecmp... yes
+checking for strndup... yes
+checking for strnlen... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for strtoll... yes
+checking for strtoull... yes
+checking for strverscmp... yes
+checking for tmpnam... yes
+checking for vasprintf... yes
+checking for vfprintf... yes
+checking for vprintf... yes
+checking for vsnprintf... yes
+checking for vsprintf... yes
+checking for waitpid... yes
+checking for setproctitle... no
+checking whether alloca needs Cray hooks... no
+checking stack direction for C alloca... -1
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for _doprnt... no
+checking for sys_errlist... yes
+checking for sys_nerr... yes
+checking for sys_siglist... yes
+checking for external symbol _system_configuration... no
+checking for __fsetlocking... yes
+checking for canonicalize_file_name... yes
+checking for dup3... yes
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for getsysinfo... no
+checking for gettimeofday... (cached) yes
+checking for on_exit... yes
+checking for psignal... yes
+checking for pstat_getdynamic... no
+checking for pstat_getstatic... no
+checking for realpath... yes
+checking for setrlimit... yes
+checking for sbrk... yes
+checking for spawnve... no
+checking for spawnvpe... no
+checking for strerror... yes
+checking for strsignal... yes
+checking for sysconf... yes
+checking for sysctl... yes
+checking for sysmp... no
+checking for table... no
+checking for times... yes
+checking for wait3... yes
+checking for wait4... yes
+checking whether basename is declared... yes
+checking whether ffs is declared... yes
+checking whether asprintf is declared... yes
+checking whether vasprintf is declared... yes
+checking whether snprintf is declared... yes
+checking whether vsnprintf is declared... yes
+checking whether calloc is declared... yes
+checking whether getenv is declared... yes
+checking whether getopt is declared... yes
+checking whether malloc is declared... yes
+checking whether realloc is declared... yes
+checking whether sbrk is declared... yes
+checking whether strtol is declared... yes
+checking whether strtoul is declared... yes
+checking whether strtoll is declared... yes
+checking whether strtoull is declared... yes
+checking whether strverscmp is declared... yes
+checking whether canonicalize_file_name must be declared... no
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... yes
+checking for working strncmp... yes
+configure: updating cache ./config.cache
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating testsuite/Makefile
+config.status: creating config.h
+config.status: executing default commands
+Configuring in ./intl
+configure: creating cache ./config.cache
+checking whether make sets $(MAKE)... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for x86_64-linux-gnu-gcc... ccache gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking for library containing strerror... none required
+checking how to run the C preprocessor... ccache gcc -E
+checking for grep that handles long lines and -e... /home/lars/src/lede/staging_dir/host/bin/grep
+checking for egrep... /home/lars/src/lede/staging_dir/host/bin/grep -E
+checking for ANSI C header files... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking whether we are using the GNU C Library 2.1 or newer... yes
+checking whether integer division by zero raises SIGFPE... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for ld used by GCC... x86_64-linux-gnu-ld
+checking if the linker (x86_64-linux-gnu-ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... yes
+checking nl_types.h presence... yes
+checking for nl_types.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for feof_unlocked... yes
+checking for fgets_unlocked... yes
+checking for getc_unlocked... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for __argz_count... yes
+checking for __argz_stringify... yes
+checking for __argz_next... yes
+checking for __fsetlocking... yes
+checking for iconv... yes
+checking for iconv declaration... install-shextern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for bison... bison
+checking version of bison... 3.0.4, ok
+checking whether NLS is requested... yes
+checking whether included gettext is requested... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for aclocal... aclocal
+checking for autoconf... autoconf
+checking for autoheader... autoheader
+configure: updating cache ./config.cache
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.intl
+config.status: creating config.h
+config.status: executing default-1 commands
+Configuring in ./bfd
+configure: creating cache ./config.cache
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... mips-openwrt-linux-musl
+checking for x86_64-linux-gnu-gcc... ccache gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking for library containing strerror... none required
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking dependency style of ccache gcc... gcc3
+checking for x86_64-linux-gnu-ar... x86_64-linux-gnu-ar
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking for x86_64-linux-gnu-gcc... (cached) ccache gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether ccache gcc accepts -g... (cached) yes
+checking for ccache gcc option to accept ISO C89... (cached) none needed
+checking how to run the C preprocessor... ccache gcc -E
+checking for grep that handles long lines and -e... /home/lars/src/lede/staging_dir/host/bin/grep
+checking for egrep... /home/lars/src/lede/staging_dir/host/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /home/lars/src/lede/staging_dir/host/bin/sed
+checking for fgrep... /home/lars/src/lede/staging_dir/host/bin/grep -F
+checking for ld used by ccache gcc... x86_64-linux-gnu-ld
+checking if the linker (x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... x86_64-linux-gnu-nm
+checking the name lister (x86_64-linux-gnu-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for x86_64-linux-gnu-ld option to reload object files... -r
+checking for x86_64-linux-gnu-objdump... x86_64-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-linux-gnu-ar... (cached) x86_64-linux-gnu-ar
+checking for x86_64-linux-gnu-strip... x86_64-linux-gnu-strip
+checking for x86_64-linux-gnu-ranlib... (cached) x86_64-linux-gnu-ranlib
+checking command to parse x86_64-linux-gnu-nm output from ccache gcc object... ok
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if ccache gcc supports -fno-rtti -fno-exceptions... no
+checking for ccache gcc option to produce PIC... -fPIC -DPIC
+checking if ccache gcc PIC flag -fPIC -DPIC works... yes
+checking if ccache gcc static flag -static works... yes
+checking if ccache gcc supports -c -o file.o... yes
+checking if ccache gcc supports -c -o file.o... (cached) yes
+checking whether the ccache gcc linker (x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for dlfcn.h... (cached) yes
+checking for windows.h... no
+checking for library containing dlopen... -ldl
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether to install libbfd... no
+checking whether NLS is requested... yes
+checking for catalogs to be installed...  da es fi fr id ja ro ru rw sr sv tr uk vi zh_CN da es fi fr id ja ro ru rw sr sv tr uk vi zh_CN
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking size of long long... 8
+checking size of void *... 8
+checking size of long... 8
+checking alloca.h usability... yes
+checking alloca.h presence... yes
+checking for alloca.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for sys/stat.h... (cached) yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+looking for a compliant stdint.h in stdint.h, checking for uintmax_t... yes
+checking for uintptr_t... yes
+checking for int_least32_t... yes
+checking for int_fast32_t... yes
+checking for uint64_t... yes
+checking what to include in bfd_stdint.h... stdint.h (already complete)
+checking whether time.h and sys/time.h may both be included... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether string.h and strings.h may both be included... yes
+checking for fcntl... yes
+checking for getpagesize... yes
+checking for setitimer... yes
+checking for sysconf... yes
+checking for fdopen... yes
+checking for getuid... yes
+checking for getgid... yes
+checking for fileno... yes
+checking for strtoull... yes
+checking for getrlimit... yes
+checking whether basename is declared... yes
+checking whether ftello is declared... yes
+checking whether ftello64 is declared... yes
+checking whether fseeko is declared... yes
+checking whether fseeko64 is declared... yes
+checking whether ffs is declared... yes
+checking whether free is declared... yes
+checking whether getenv is declared... yes
+checking whether malloc is declared... yes
+checking whether realloc is declared... yes
+checking whether stpcpy is declared... yes
+checking whether strstr is declared... yes
+checking whether asprintf is declared... yes
+checking whether vasprintf is declared... yes
+checking whether snprintf is declared... yes
+checking whether vsnprintf is declared... yes
+checking whether strnlen is declared... yes
+checking linker --as-needed support... yes
+checking for cos in -lm... yes
+checking for gcc version with buggy 64-bit support... no
+checking for ftello... yes
+checking for ftello64... yes
+checking for fseeko... yes
+checking for fseeko64... yes
+checking for fopen64... yes
+checking size of off_t... 8
+checking file_ptr type... BFD_HOST_64_BIT
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... yes
+checking for madvise... yes
+checking for mprotect... yes
+configure: updating cache ./config.cache
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating bfd-in3.h
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: executing bfd_stdint.h commands
+config.status: executing default commands
+make[6]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/libiberty'
+if [ x"" != x ] && [ ! -d pic ]; then \
+  mkdir pic; \
+else true; fi
+touch stamp-picdir
+if [ x"" != x ] && [ ! -d noasan ]; then \
+  mkdir noasan; \
+else true; fi
+touch stamp-noasandir
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./regex.c -o pic/regex.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./regex.c -o noasan/regex.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./regex.c -o regex.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./cplus-dem.c -o pic/cplus-dem.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./cplus-dem.c -o noasan/cplus-dem.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./cplus-dem.c -o cplus-dem.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./cp-demangle.c -o pic/cp-demangle.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./cp-demangle.c -o noasan/cp-demangle.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./cp-demangle.c -o cp-demangle.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./md5.c -o pic/md5.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./md5.c -o noasan/md5.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./md5.c -o md5.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./sha1.c -o pic/sha1.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./sha1.c -o noasan/sha1.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./sha1.c -o sha1.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./alloca.c -o pic/alloca.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./alloca.c -o noasan/alloca.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./alloca.c -o alloca.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./argv.c -o pic/argv.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./argv.c -o noasan/argv.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./argv.c -o argv.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./choose-temp.c -o pic/choose-temp.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./choose-temp.c -o noasan/choose-temp.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./choose-temp.c -o choose-temp.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./concat.c -o pic/concat.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./concat.c -o noasan/concat.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./concat.c -o concat.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./cp-demint.c -o pic/cp-demint.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./cp-demint.c -o noasan/cp-demint.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./cp-demint.c -o cp-demint.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./crc32.c -o pic/crc32.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./crc32.c -o noasan/crc32.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./crc32.c -o crc32.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./d-demangle.c -o pic/d-demangle.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./d-demangle.c -o noasan/d-demangle.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./d-demangle.c -o d-demangle.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./dwarfnames.c -o pic/dwarfnames.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./dwarfnames.c -o noasan/dwarfnames.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./dwarfnames.c -o dwarfnames.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./dyn-string.c -o pic/dyn-string.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./dyn-string.c -o noasan/dyn-string.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./dyn-string.c -o dyn-string.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./fdmatch.c -o pic/fdmatch.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./fdmatch.c -o noasan/fdmatch.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./fdmatch.c -o fdmatch.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./fibheap.c -o pic/fibheap.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./fibheap.c -o noasan/fibheap.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./fibheap.c -o fibheap.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./filename_cmp.c -o pic/filename_cmp.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./filename_cmp.c -o noasan/filename_cmp.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./filename_cmp.c -o filename_cmp.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./floatformat.c -o pic/floatformat.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./floatformat.c -o noasan/floatformat.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./floatformat.c -o floatformat.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./fnmatch.c -o pic/fnmatch.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./fnmatch.c -o noasan/fnmatch.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./fnmatch.c -o fnmatch.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./fopen_unlocked.c -o pic/fopen_unlocked.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./fopen_unlocked.c -o noasan/fopen_unlocked.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./fopen_unlocked.c -o fopen_unlocked.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./getopt.c -o pic/getopt.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./getopt.c -o noasan/getopt.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./getopt.c -o getopt.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./getopt1.c -o pic/getopt1.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./getopt1.c -o noasan/getopt1.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./getopt1.c -o getopt1.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./getpwd.c -o pic/getpwd.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./getpwd.c -o noasan/getpwd.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./getpwd.c -o getpwd.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./getruntime.c -o pic/getruntime.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./getruntime.c -o noasan/getruntime.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./getruntime.c -o getruntime.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./hashtab.c -o pic/hashtab.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./hashtab.c -o noasan/hashtab.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./hashtab.c -o hashtab.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./hex.c -o pic/hex.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./hex.c -o noasan/hex.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./hex.c -o hex.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./lbasename.c -o pic/lbasename.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./lbasename.c -o noasan/lbasename.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./lbasename.c -o lbasename.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./lrealpath.c -o pic/lrealpath.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./lrealpath.c -o noasan/lrealpath.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./lrealpath.c -o lrealpath.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./make-relative-prefix.c -o pic/make-relative-prefix.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./make-relative-prefix.c -o noasan/make-relative-prefix.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./make-relative-prefix.c -o make-relative-prefix.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./make-temp-file.c -o pic/make-temp-file.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./make-temp-file.c -o noasan/make-temp-file.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./make-temp-file.c -o make-temp-file.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./objalloc.c -o pic/objalloc.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./objalloc.c -o noasan/objalloc.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./objalloc.c -o objalloc.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./obstack.c -o pic/obstack.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./obstack.c -o noasan/obstack.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./obstack.c -o obstack.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./partition.c -o pic/partition.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./partition.c -o noasan/partition.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./partition.c -o partition.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./pexecute.c -o pic/pexecute.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./pexecute.c -o noasan/pexecute.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./pexecute.c -o pexecute.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./physmem.c -o pic/physmem.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./physmem.c -o noasan/physmem.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./physmem.c -o physmem.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./pex-common.c -o pic/pex-common.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./pex-common.c -o noasan/pex-common.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./pex-common.c -o pex-common.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./pex-one.c -o pic/pex-one.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./pex-one.c -o noasan/pex-one.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./pex-one.c -o pex-one.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./pex-unix.c -o pic/pex-unix.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./pex-unix.c -o noasan/pex-unix.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./pex-unix.c -o pex-unix.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./vprintf-support.c -o pic/vprintf-support.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./vprintf-support.c -o noasan/vprintf-support.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./vprintf-support.c -o vprintf-support.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./safe-ctype.c -o pic/safe-ctype.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./safe-ctype.c -o noasan/safe-ctype.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./safe-ctype.c -o safe-ctype.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./simple-object.c -o pic/simple-object.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./simple-object.c -o noasan/simple-object.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./simple-object.c -o simple-object.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./simple-object-coff.c -o pic/simple-object-coff.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./simple-object-coff.c -o noasan/simple-object-coff.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./simple-object-coff.c -o simple-object-coff.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./simple-object-elf.c -o pic/simple-object-elf.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./simple-object-elf.c -o noasan/simple-object-elf.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./simple-object-elf.c -o simple-object-elf.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./simple-object-mach-o.c -o pic/simple-object-mach-o.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./simple-object-mach-o.c -o noasan/simple-object-mach-o.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./simple-object-mach-o.c -o simple-object-mach-o.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./simple-object-xcoff.c -o pic/simple-object-xcoff.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./simple-object-xcoff.c -o noasan/simple-object-xcoff.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./simple-object-xcoff.c -o simple-object-xcoff.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./sort.c -o pic/sort.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./sort.c -o noasan/sort.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./sort.c -o sort.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./spaces.c -o pic/spaces.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./spaces.c -o noasan/spaces.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./spaces.c -o spaces.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./splay-tree.c -o pic/splay-tree.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./splay-tree.c -o noasan/splay-tree.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./splay-tree.c -o splay-tree.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./stack-limit.c -o pic/stack-limit.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./stack-limit.c -o noasan/stack-limit.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./stack-limit.c -o stack-limit.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./strerror.c -o pic/strerror.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./strerror.c -o noasan/strerror.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./strerror.c -o strerror.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./strsignal.c -o pic/strsignal.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./strsignal.c -o noasan/strsignal.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./strsignal.c -o strsignal.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./timeval-utils.c -o pic/timeval-utils.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./timeval-utils.c -o noasan/timeval-utils.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./timeval-utils.c -o timeval-utils.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./unlink-if-ordinary.c -o pic/unlink-if-ordinary.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./unlink-if-ordinary.c -o noasan/unlink-if-ordinary.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./unlink-if-ordinary.c -o unlink-if-ordinary.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xasprintf.c -o pic/xasprintf.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xasprintf.c -o noasan/xasprintf.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xasprintf.c -o xasprintf.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xatexit.c -o pic/xatexit.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xatexit.c -o noasan/xatexit.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xatexit.c -o xatexit.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xexit.c -o pic/xexit.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xexit.c -o noasan/xexit.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xexit.c -o xexit.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xmalloc.c -o pic/xmalloc.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xmalloc.c -o noasan/xmalloc.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xmalloc.c -o xmalloc.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xmemdup.c -o pic/xmemdup.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xmemdup.c -o noasan/xmemdup.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xmemdup.c -o xmemdup.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xstrdup.c -o pic/xstrdup.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xstrdup.c -o noasan/xstrdup.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xstrdup.c -o xstrdup.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xstrerror.c -o pic/xstrerror.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xstrerror.c -o noasan/xstrerror.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xstrerror.c -o xstrerror.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xstrndup.c -o pic/xstrndup.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xstrndup.c -o noasan/xstrndup.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xstrndup.c -o xstrndup.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./xvasprintf.c -o pic/xvasprintf.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./xvasprintf.c -o noasan/xvasprintf.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./xvasprintf.c -o xvasprintf.o
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE  ./setproctitle.c -o pic/setproctitle.o; \
+else true; fi
+if [ x"" != x ]; then \
+  ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE   ./setproctitle.c -o noasan/setproctitle.o; \
+else true; fi
+ccache gcc -c -DHAVE_CONFIG_H -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -I. -I./../include  -W -Wall -Wwrite-strings -Wc++-compat -Wstrict-prototypes -pedantic  -D_GNU_SOURCE ./setproctitle.c -o setproctitle.o
+rm -f ./libiberty.a pic/./libiberty.a noasan/./libiberty.a
+x86_64-linux-gnu-ar rc ./libiberty.a \
+  ./regex.o ./cplus-dem.o ./cp-demangle.o ./md5.o ./sha1.o ./alloca.o ./argv.o ./choose-temp.o ./concat.o ./cp-demint.o ./crc32.o ./d-demangle.o ./dwarfnames.o ./dyn-string.o ./fdmatch.o ./fibheap.o ./filename_cmp.o ./floatformat.o ./fnmatch.o ./fopen_unlocked.o ./getopt.o ./getopt1.o ./getpwd.o ./getruntime.o ./hashtab.o ./hex.o ./lbasename.o ./lrealpath.o ./make-relative-prefix.o ./make-temp-file.o ./objalloc.o ./obstack.o ./partition.o ./pexecute.o ./physmem.o ./pex-common.o ./pex-one.o ./pex-unix.o ./vprintf-support.o ./safe-ctype.o ./simple-object.o ./simple-object-coff.o ./simple-object-elf.o ./simple-object-mach-o.o ./simple-object-xcoff.o ./sort.o ./spaces.o ./splay-tree.o ./stack-limit.o ./strerror.o ./strsignal.o ./timeval-utils.o ./unlink-if-ordinary.o ./xasprintf.o ./xatexit.o ./xexit.o ./xmalloc.o ./xmemdup.o ./xstrdup.o ./xstrerror.o ./xstrndup.o ./xvasprintf.o  ./setproctitle.o
+x86_64-linux-gnu-ranlib ./libiberty.a
+if [ x"" != x ]; then \
+  cd pic; \
+  x86_64-linux-gnu-ar rc ./libiberty.a \
+    ./regex.o ./cplus-dem.o ./cp-demangle.o ./md5.o ./sha1.o ./alloca.o ./argv.o ./choose-temp.o ./concat.o ./cp-demint.o ./crc32.o ./d-demangle.o ./dwarfnames.o ./dyn-string.o ./fdmatch.o ./fibheap.o ./filename_cmp.o ./floatformat.o ./fnmatch.o ./fopen_unlocked.o ./getopt.o ./getopt1.o ./getpwd.o ./getruntime.o ./hashtab.o ./hex.o ./lbasename.o ./lrealpath.o ./make-relative-prefix.o ./make-temp-file.o ./objalloc.o ./obstack.o ./partition.o ./pexecute.o ./physmem.o ./pex-common.o ./pex-one.o ./pex-unix.o ./vprintf-support.o ./safe-ctype.o ./simple-object.o ./simple-object-coff.o ./simple-object-elf.o ./simple-object-mach-o.o ./simple-object-xcoff.o ./sort.o ./spaces.o ./splay-tree.o ./stack-limit.o ./strerror.o ./strsignal.o ./timeval-utils.o ./unlink-if-ordinary.o ./xasprintf.o ./xatexit.o ./xexit.o ./xmalloc.o ./xmemdup.o ./xstrdup.o ./xstrerror.o ./xstrndup.o ./xvasprintf.o  ./setproctitle.o; \
+  x86_64-linux-gnu-ranlib ./libiberty.a; \
+  cd ..; \
+else true; fi; \
+if [ x"" != x ]; then \
+  cd noasan; \
+  x86_64-linux-gnu-ar rc ./libiberty.a \
+    ./regex.o ./cplus-dem.o ./cp-demangle.o ./md5.o ./sha1.o ./alloca.o ./argv.o ./choose-temp.o ./concat.o ./cp-demint.o ./crc32.o ./d-demangle.o ./dwarfnames.o ./dyn-string.o ./fdmatch.o ./fibheap.o ./filename_cmp.o ./floatformat.o ./fnmatch.o ./fopen_unlocked.o ./getopt.o ./getopt1.o ./getpwd.o ./getruntime.o ./hashtab.o ./hex.o ./lbasename.o ./lrealpath.o ./make-relative-prefix.o ./make-temp-file.o ./objalloc.o ./obstack.o ./partition.o ./pexecute.o ./physmem.o ./pex-common.o ./pex-one.o ./pex-unix.o ./vprintf-support.o ./safe-ctype.o ./simple-object.o ./simple-object-coff.o ./simple-object-elf.o ./simple-object-mach-o.o ./simple-object-xcoff.o ./sort.o ./spaces.o ./splay-tree.o ./stack-limit.o ./strerror.o ./strsignal.o ./timeval-utils.o ./unlink-if-ordinary.o ./xasprintf.o ./xatexit.o ./xexit.o ./xmalloc.o ./xmemdup.o ./xstrdup.o ./xstrerror.o ./xstrndup.o ./xvasprintf.o  ./setproctitle.o; \
+  x86_64-linux-gnu-ranlib ./libiberty.a; \
+  cd ..; \
+else true; fi
+echo ./regex.o ./cplus-dem.o ./cp-demangle.o ./md5.o ./sha1.o ./alloca.o ./argv.o ./choose-temp.o ./concat.o ./cp-demint.o ./crc32.o ./d-demangle.o ./dwarfnames.o ./dyn-string.o ./fdmatch.o ./fibheap.o ./filename_cmp.o ./floatformat.o ./fnmatch.o ./fopen_unlocked.o ./getopt.o ./getopt1.o ./getpwd.o ./getruntime.o ./hashtab.o ./hex.o ./lbasename.o ./lrealpath.o ./make-relative-prefix.o ./make-temp-file.o ./objalloc.o ./obstack.o ./partition.o ./pexecute.o ./physmem.o ./pex-common.o ./pex-one.o ./pex-unix.o ./vprintf-support.o ./safe-ctype.o ./simple-object.o ./simple-object-coff.o ./simple-object-elf.o ./simple-object-mach-o.o ./simple-object-xcoff.o ./sort.o ./spaces.o ./splay-tree.o ./stack-limit.o ./strerror.o ./strsignal.o ./timeval-utils.o ./unlink-if-ordinary.o ./xasprintf.o ./xatexit.o ./xexit.o ./xmalloc.o ./xmemdup.o ./xstrdup.o ./xstrerror.o ./xstrndup.o ./xvasprintf.o > required-list
+make[7]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/libiberty/testsuite'
+make[7]: Nothing to be done for 'all'.
+make[7]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/libiberty/testsuite'
+make[6]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/libiberty'
+make[6]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/intl'
+make[6]: Nothing to be done for 'all'.
+make[6]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/intl'
+Configuring in ./zlib
+configure: creating cache ./config.cache
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... mips-openwrt-linux-musl
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for x86_64-linux-gnu-gcc... ccache gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether ccache gcc accepts -g... yes
+checking for ccache gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of ccache gcc... gcc3
+checking how to print strings... printf
+checking for a sed that does not truncate output... /home/lars/src/lede/staging_dir/host/bin/sed
+checking for grep that handles long lines and -e... /home/lars/src/lede/staging_dir/host/bin/grep
+checking for egrep... /home/lars/src/lede/staging_dir/host/bin/grep -E
+checking for fgrep... /home/lars/src/lede/staging_dir/host/bin/grep -F
+checking for ld used by ccache gcc... x86_64-linux-gnu-ld
+checking if the linker (x86_64-linux-gnu-ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... x86_64-linux-gnu-nm
+checking the name lister (x86_64-linux-gnu-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for x86_64-linux-gnu-ld option to reload object files... -r
+checking for x86_64-linux-gnu-objdump... x86_64-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-linux-gnu-ar... x86_64-linux-gnu-ar
+checking for x86_64-linux-gnu-strip... x86_64-linux-gnu-strip
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking command to parse x86_64-linux-gnu-nm output from ccache gcc object... ok
+checking how to run the C preprocessor... ccache gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if ccache gcc supports -fno-rtti -fno-exceptions... no
+checking for ccache gcc option to produce PIC... -fPIC -DPIC
+checking if ccache gcc PIC flag -fPIC -DPIC works... yes
+checking if ccache gcc static flag -static works... yes
+checking if ccache gcc supports -c -o file.o... yes
+checking if ccache gcc supports -c -o file.o... (cached) yes
+checking whether the ccache gcc linker (x86_64-linux-gnu-ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C preprocessor... ccache gcc -E
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for memcpy... yes
+checking for strerror... yes
+checking for unistd.h... (cached) yes
+configure: updating cache ./config.cache
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make[6]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/zlib'
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-adler32.o `test -f 'adler32.c' || echo './'`adler32.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-compress.o `test -f 'compress.c' || echo './'`compress.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-crc32.o `test -f 'crc32.c' || echo './'`crc32.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-deflate.o `test -f 'deflate.c' || echo './'`deflate.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-gzread.o `test -f 'gzread.c' || echo './'`gzread.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-gzclose.o `test -f 'gzclose.c' || echo './'`gzclose.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-gzwrite.o `test -f 'gzwrite.c' || echo './'`gzwrite.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-gzlib.o `test -f 'gzlib.c' || echo './'`gzlib.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-infback.o `test -f 'infback.c' || echo './'`infback.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-inffast.o `test -f 'inffast.c' || echo './'`inffast.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-inflate.o `test -f 'inflate.c' || echo './'`inflate.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-inftrees.o `test -f 'inftrees.c' || echo './'`inftrees.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-trees.o `test -f 'trees.c' || echo './'`trees.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-uncompr.o `test -f 'uncompr.c' || echo './'`uncompr.c
+ccache gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"zlib\" -DVERSION=\"1.1.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_STDLIB_H=1 -DHAVE_UNISTD_H=1 -DHAVE_GETPAGESIZE=1 -DHAVE_MMAP=1 -DHAVE_MEMCPY=1 -DHAVE_STRERROR=1 -DHAVE_UNISTD_H=1 -I.   -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include    -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -c -o libz_a-zutil.o `test -f 'zutil.c' || echo './'`zutil.c
+rm -f libz.a
+x86_64-linux-gnu-ar cru libz.a libz_a-adler32.o libz_a-compress.o libz_a-crc32.o libz_a-deflate.o libz_a-gzread.o libz_a-gzclose.o libz_a-gzwrite.o libz_a-gzlib.o libz_a-infback.o libz_a-inffast.o libz_a-inflate.o libz_a-inftrees.o libz_a-trees.o libz_a-uncompr.o libz_a-zutil.o 
+x86_64-linux-gnu-ranlib libz.a
+true "AR_FLAGS=rc" "CC_FOR_BUILD=ccache gcc" "CFLAGS=-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " "CXXFLAGS=-g -O2" "CFLAGS_FOR_BUILD=-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " "CFLAGS_FOR_TARGET=-g -O2 -minterlink-mips16" "INSTALL=/usr/bin/install -c" "INSTALL_DATA=/usr/bin/install -c -m 644" "INSTALL_PROGRAM=/usr/bin/install -c" "INSTALL_SCRIPT=/usr/bin/install -c" "LDFLAGS=-static-libstdc++ -static-libgcc -L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib " "LIBCFLAGS=-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " "LIBCFLAGS_FOR_TARGET=-g -O2 -minterlink-mips16" "MAKE=make" "MAKEINFO=/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/missing makeinfo --split-size=5000000 --split-size=5000000 " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/usr/bin/env bash" "EXPECT=expect" "RUNTEST=runtest" "RUNTESTFLAGS=" "exec_prefix=/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl" "infodir=/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/share/info" "libdir=/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/lib" "prefix=/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl" "tooldir=/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/mips-openwrt-linux-musl" "AR=x86_64-linux-gnu-ar" "AS=x86_64-linux-gnu-as" "CC=ccache gcc" "CXX=x86_64-linux-gnu-g++" "LD=x86_64-linux-gnu-ld" "LIBCFLAGS=-O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include " "NM=x86_64-linux-gnu-nm" "PICFLAG=" "RANLIB=x86_64-linux-gnu-ranlib" "DESTDIR=" DO=all multi-do # make
+make[6]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/zlib'
+make[6]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd'
+creating bfdver.h
+rm -f elf32-target.h
+/home/lars/src/lede/staging_dir/host/bin/sed -e s/NN/32/g < ./elfxx-target.h > elf32-target.new
+mv -f elf32-target.new elf32-target.h
+rm -f elf64-target.h
+/home/lars/src/lede/staging_dir/host/bin/sed -e s/NN/64/g < ./elfxx-target.h > elf64-target.new
+mv -f elf64-target.new elf64-target.h
+rm -f targmatch.h
+/home/lars/src/lede/staging_dir/host/bin/sed -f ./targmatch.sed < ./config.bfd > targmatch.new
+mv -f targmatch.new targmatch.h
+Making info in doc
+make[7]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/doc'
+ccache gcc -o chw$$ -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  \
+  -L/home/lars/src/lede/staging_dir/host/lib -L/home/lars/src/lede/staging_dir/host/usr/lib   -I.. -I./.. -I./../../include -I./../../intl -I../../intl ./chew.c; \
+/usr/bin/env bash ./../../move-if-change \
+  chw$$ chew; \
+touch chew.stamp
+./chew -f ./doc.str < ./../aoutx.h >aoutx.tmp
+test -e aoutx.texi || test ! -f ./aoutx.texi || cp -p ./aoutx.texi .
+/usr/bin/env bash ./../../move-if-change aoutx.tmp aoutx.texi
+touch aoutx.stamp
+./chew -f ./doc.str < ./../archive.c >archive.tmp
+test -e archive.texi || test ! -f ./archive.texi || cp -p ./archive.texi .
+/usr/bin/env bash ./../../move-if-change archive.tmp archive.texi
+touch archive.stamp
+./chew -f ./doc.str < ./../archures.c >archures.tmp
+test -e archures.texi || test ! -f ./archures.texi || cp -p ./archures.texi .
+/usr/bin/env bash ./../../move-if-change archures.tmp archures.texi
+touch archures.stamp
+./chew -f ./doc.str < ./../bfd.c >bfd.tmp
+test -e bfdt.texi || test ! -f ./bfdt.texi || cp -p ./bfdt.texi .
+/usr/bin/env bash ./../../move-if-change bfd.tmp bfdt.texi
+touch bfdt.stamp
+./chew -f ./doc.str < ./../cache.c >cache.tmp
+test -e cache.texi || test ! -f ./cache.texi || cp -p ./cache.texi .
+/usr/bin/env bash ./../../move-if-change cache.tmp cache.texi
+touch cache.stamp
+./chew -f ./doc.str < ./../coffcode.h >coffcode.tmp
+test -e coffcode.texi || test ! -f ./coffcode.texi || cp -p ./coffcode.texi .
+/usr/bin/env bash ./../../move-if-change coffcode.tmp coffcode.texi
+touch coffcode.stamp
+./chew -f ./doc.str < ./../corefile.c >core.tmp
+test -e core.texi || test ! -f ./core.texi || cp -p ./core.texi .
+/usr/bin/env bash ./../../move-if-change core.tmp core.texi
+touch core.stamp
+./chew -f ./doc.str < ./../elf.c >elf.tmp
+test -e elf.texi || test ! -f ./elf.texi || cp -p ./elf.texi .
+/usr/bin/env bash ./../../move-if-change elf.tmp elf.texi
+touch elf.stamp
+./chew -f ./doc.str < ./../elfcode.h >elfcode.tmp
+test -e elfcode.texi || test ! -f ./elfcode.texi || cp -p ./elfcode.texi .
+/usr/bin/env bash ./../../move-if-change elfcode.tmp elfcode.texi
+touch elfcode.stamp
+./chew -f ./doc.str < ./../format.c >format.tmp
+test -e format.texi || test ! -f ./format.texi || cp -p ./format.texi .
+/usr/bin/env bash ./../../move-if-change format.tmp format.texi
+touch format.stamp
+./chew -f ./doc.str < ./../libbfd.c >libbfd.tmp
+test -e libbfd.texi || test ! -f ./libbfd.texi || cp -p ./libbfd.texi .
+/usr/bin/env bash ./../../move-if-change libbfd.tmp libbfd.texi
+touch libbfd.stamp
+./chew -f ./doc.str < ./../bfdwin.c >bfdwin.tmp
+test -e bfdwin.texi || test ! -f ./bfdwin.texi || cp -p ./bfdwin.texi .
+/usr/bin/env bash ./../../move-if-change bfdwin.tmp bfdwin.texi
+touch bfdwin.stamp
+./chew -f ./doc.str < ./../bfdio.c >bfdio.tmp
+test -e bfdio.texi || test ! -f ./bfdio.texi || cp -p ./bfdio.texi .
+/usr/bin/env bash ./../../move-if-change bfdio.tmp bfdio.texi
+touch bfdio.stamp
+./chew -f ./doc.str < ./../opncls.c >opncls.tmp
+test -e opncls.texi || test ! -f ./opncls.texi || cp -p ./opncls.texi .
+/usr/bin/env bash ./../../move-if-change opncls.tmp opncls.texi
+touch opncls.stamp
+./chew -f ./doc.str < ./../reloc.c >reloc.tmp
+test -e reloc.texi || test ! -f ./reloc.texi || cp -p ./reloc.texi .
+/usr/bin/env bash ./../../move-if-change reloc.tmp reloc.texi
+touch reloc.stamp
+./chew -f ./doc.str < ./../section.c >section.tmp
+test -e section.texi || test ! -f ./section.texi || cp -p ./section.texi .
+/usr/bin/env bash ./../../move-if-change section.tmp section.texi
+touch section.stamp
+./chew -f ./doc.str < ./../syms.c >syms.tmp
+test -e syms.texi || test ! -f ./syms.texi || cp -p ./syms.texi .
+/usr/bin/env bash ./../../move-if-change syms.tmp syms.texi
+touch syms.stamp
+./chew -f ./doc.str < ./../targets.c >targets.tmp
+test -e targets.texi || test ! -f ./targets.texi || cp -p ./targets.texi .
+/usr/bin/env bash ./../../move-if-change targets.tmp targets.texi
+touch targets.stamp
+./chew -f ./doc.str < ./../init.c >init.tmp
+test -e init.texi || test ! -f ./init.texi || cp -p ./init.texi .
+/usr/bin/env bash ./../../move-if-change init.tmp init.texi
+touch init.stamp
+./chew -f ./doc.str < ./../hash.c >hash.tmp
+test -e hash.texi || test ! -f ./hash.texi || cp -p ./hash.texi .
+/usr/bin/env bash ./../../move-if-change hash.tmp hash.texi
+touch hash.stamp
+./chew -f ./doc.str < ./../linker.c >linker.tmp
+test -e linker.texi || test ! -f ./linker.texi || cp -p ./linker.texi .
+/usr/bin/env bash ./../../move-if-change linker.tmp linker.texi
+touch linker.stamp
+./chew -f ./doc.str < ./../mmo.c >mmo.tmp
+test -e mmo.texi || test ! -f ./mmo.texi || cp -p ./mmo.texi .
+/usr/bin/env bash ./../../move-if-change mmo.tmp mmo.texi
+touch mmo.stamp
+make[7]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/doc'
+Making info in po
+make[7]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/po'
+( if test 'x.' != 'x.'; then \
+    posrcprefix='../'; \
+  else \
+    posrcprefix="../"; \
+  fi; \
+  rm -f SRC-POTFILES-t SRC-POTFILES \
+    && (sed -e '/^#/d' \
+            -e '/^[ 	]*$/d' \
+	    -e "s@.*@	$posrcprefix& \\\\@" < ./SRC-POTFILES.in \
+	| sed -e '$s/\\$//') > SRC-POTFILES-t \
+    && chmod a-w SRC-POTFILES-t \
+    && mv SRC-POTFILES-t SRC-POTFILES )
+( rm -f BLD-POTFILES-t BLD-POTFILES \
+    && (sed -e '/^#/d' \
+            -e '/^[ 	]*$/d' \
+	    -e "s@.*@	../& \\\\@" < ./BLD-POTFILES.in \
+	| sed -e '$s/\\$//') > BLD-POTFILES-t \
+    && chmod a-w BLD-POTFILES-t \
+    && mv BLD-POTFILES-t BLD-POTFILES )
+cd .. \
+  && CONFIG_FILES=po/Makefile.in:po/Make-in \
+     CONFIG_HEADERS= /usr/bin/env bash ./config.status
+config.status: creating po/Makefile.in
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: executing bfd_stdint.h commands
+config.status: executing default commands
+make[7]: Nothing to be done for 'info'.
+make[7]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/po'
+make[7]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd'
+make[7]: Nothing to be done for 'info-am'.
+make[7]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd'
+make  all-recursive
+make[7]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd'
+Making all in doc
+make[8]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/doc'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/doc'
+Making all in po
+make[8]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/po'
+make[8]: Nothing to be done for 'all'.
+make[8]: Leaving directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd/po'
+make[8]: Entering directory '/home/lars/src/lede/build_dir/toolchain-mips_24kc_gcc-5.4.0_musl/gdb-7.12.1/bfd'
+rm -f bfd-tmp.h
+cp bfd-in3.h bfd-tmp.h
+/usr/bin/env bash ./../move-if-change bfd-tmp.h bfd.h
+rm -f bfd-tmp.h
+touch stmp-bfd-h
+/usr/bin/env bash ./libtool --tag=CC   --mode=compile ccache gcc -DHAVE_CONFIG_H -I. -I. -I. -I./../include  -DHAVE_mips_elf32_trad_be_vec -DHAVE_mips_elf32_trad_le_vec -DHAVE_mips_ecoff_be_vec -DHAVE_mips_ecoff_le_vec -DHAVE_mips_elf32_ntrad_be_vec -DHAVE_mips_elf64_trad_be_vec -DHAVE_mips_elf32_ntrad_le_vec -DHAVE_mips_elf64_trad_le_vec -DHAVE_elf64_le_vec -DHAVE_elf64_be_vec -DHAVE_elf32_le_vec -DHAVE_elf32_be_vec -DHAVE_plugin_vec  -DBINDIR='"/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/bin"' -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -I./../zlib -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include  -MT archive.lo -MD -MP -MF .deps/archive.Tpo -c -o archive.lo archive.c
+libtool: compile:  ccache gcc -DHAVE_CONFIG_H -I. -I. -I. -I./../include -DHAVE_mips_elf32_trad_be_vec -DHAVE_mips_elf32_trad_le_vec -DHAVE_mips_ecoff_be_vec -DHAVE_mips_ecoff_le_vec -DHAVE_mips_elf32_ntrad_be_vec -DHAVE_mips_elf64_trad_be_vec -DHAVE_mips_elf32_ntrad_le_vec -DHAVE_mips_elf64_trad_le_vec -DHAVE_elf64_le_vec -DHAVE_elf64_be_vec -DHAVE_elf32_le_vec -DHAVE_elf32_be_vec -DHAVE_plugin_vec -DBINDIR=\"/home/lars/src/lede/staging_dir/toolchain-mips_24kc_gcc-5.4.0_musl/bin\" -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -I./../zlib -O2 -I/home/lars/src/lede/staging_dir/host/include -I/home/lars/src/lede/staging_dir/host/usr/include -MT archive.lo -MD -MP -MF .deps/archive.Tpo -c archive.c -o archive.o

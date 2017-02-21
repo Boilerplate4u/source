@@ -1,0 +1,24 @@
+--- a/include/net/ipv6.h
++++ b/include/net/ipv6.h
+@@ -799,17 +803,18 @@ static inline int ip6_default_np_autolab
+ static inline void ip6_flow_hdr(struct ipv6hdr *hdr, unsigned int tclass,
+ 				__be32 flowlabel)
+ {
+-	*(__be32 *)hdr = htonl(0x60000000 | (tclass << 20)) | flowlabel;
++	net_hdr_word((__be32 *)hdr) =
++		htonl(0x60000000 | (tclass << 20)) | flowlabel;
+ }
+ 
+ static inline __be32 ip6_flowinfo(const struct ipv6hdr *hdr)
+ {
+-	return *(__be32 *)hdr & IPV6_FLOWINFO_MASK;
++	return net_hdr_word((__be32 *)hdr) & IPV6_FLOWINFO_MASK;
+ }
+ 
+ static inline __be32 ip6_flowlabel(const struct ipv6hdr *hdr)
+ {
+-	return *(__be32 *)hdr & IPV6_FLOWLABEL_MASK;
++	return net_hdr_word((__be32 *)hdr) & IPV6_FLOWLABEL_MASK;
+ }
+ 
+ static inline u8 ip6_tclass(__be32 flowinfo)

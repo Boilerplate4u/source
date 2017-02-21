@@ -1,0 +1,11 @@
+--- a/drivers/tty/serial/serial_core.c
++++ b/drivers/tty/serial/serial_core.c
+@@ -164,6 +164,8 @@ static int uart_port_startup(struct tty_
+ 	if (retval == 0) {
+ 		if (uart_console(uport) && uport->cons->cflag) {
+ 			tty->termios.c_cflag = uport->cons->cflag;
++			tty->termios.c_ospeed = uport->cons->baud;
++			tty->termios.c_ispeed = uport->cons->baud;
+ 			uport->cons->cflag = 0;
+ 		}
+ 		/*

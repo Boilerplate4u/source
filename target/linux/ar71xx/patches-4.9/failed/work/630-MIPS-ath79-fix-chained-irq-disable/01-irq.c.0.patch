@@ -1,0 +1,12 @@
+--- a/arch/mips/ath79/irq.c
++++ b/arch/mips/ath79/irq.c
+@@ -26,6 +26,9 @@
+ #include "common.h"
+ #include "machtypes.h"
+ 
++static struct irq_chip ip2_chip;
++static struct irq_chip ip3_chip;
++
+ static void ath79_misc_irq_handler(struct irq_desc *desc)
+ {
+ 	void __iomem *base = ath79_reset_base;

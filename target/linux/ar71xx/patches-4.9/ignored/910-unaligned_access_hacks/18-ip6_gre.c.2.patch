@@ -1,0 +1,11 @@
+--- a/net/ipv6/ip6_gre.c
++++ b/net/ipv6/ip6_gre.c
+@@ -742,7 +742,7 @@ static netdev_tx_t ip6gre_xmit2(struct s
+ 
+ 		if (tunnel->parms.o_flags&GRE_SEQ) {
+ 			++tunnel->o_seqno;
+-			*ptr = htonl(tunnel->o_seqno);
++			net_hdr_word(ptr) = htonl(tunnel->o_seqno);
+ 			ptr--;
+ 		}
+ 		if (tunnel->parms.o_flags&GRE_KEY) {

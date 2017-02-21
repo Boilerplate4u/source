@@ -1,0 +1,11 @@
+--- a/include/uapi/linux/igmp.h
++++ b/include/uapi/linux/igmp.h
+@@ -48,7 +48,7 @@ struct igmpv3_grec {
+ 	__be16	grec_nsrcs;
+ 	__be32	grec_mca;
+ 	__be32	grec_src[0];
+-};
++} __attribute__((packed, aligned(2)));
+ 
+ struct igmpv3_report {
+ 	__u8 type;

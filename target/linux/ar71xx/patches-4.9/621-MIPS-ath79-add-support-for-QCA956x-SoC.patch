@@ -291,20 +291,9 @@
  		return;
 --- a/arch/mips/ath79/irq.c
 +++ b/arch/mips/ath79/irq.c
-@@ -106,7 +106,9 @@ static void __init ath79_misc_irq_init(v
- 		 soc_is_ar933x() ||
- 		 soc_is_ar934x() ||
- 		 soc_is_qca953x() ||
--		 soc_is_qca955x())
-+		 soc_is_qca955x() ||
-+		 soc_is_qca956x() ||
-+		 soc_is_tp9343())
- 		ath79_misc_irq_chip.irq_ack = ar724x_misc_irq_ack;
- 	else
- 		BUG();
-@@ -263,6 +265,87 @@ static unsigned irq_wb_chan[8] = {
- 	-1, -1, -1, -1, -1, -1, -1, -1,
- };
+@@ -156,6 +156,87 @@ static void qca955x_irq_init(void)
+ 	irq_set_chained_handler(ATH79_CPU_IRQ(3), qca955x_ip3_irq_dispatch);
+ }
  
 +static void qca956x_ip2_irq_dispatch(struct irq_desc *desc)
 +{
@@ -387,10 +376,21 @@
 +	late_time_init = &qca956x_enable_timer_cb;
 +}
 +
- asmlinkage void plat_irq_dispatch(void)
+ void __init arch_init_irq(void)
  {
- 	unsigned long pending;
-@@ -404,4 +487,6 @@ void __init arch_init_irq(void)
+ 	unsigned irq_wb_chan2 = -1;
+@@ -183,7 +264,9 @@ void __init arch_init_irq(void)
+ 		 soc_is_ar933x() ||
+ 		 soc_is_ar934x() ||
+ 		 soc_is_qca953x() ||
+-		 soc_is_qca955x())
++		 soc_is_qca955x() ||
++		 soc_is_qca956x() ||
++		 soc_is_tp9343())
+ 		misc_is_ar71xx = false;
+ 	else
+ 		BUG();
+@@ -197,4 +280,6 @@ void __init arch_init_irq(void)
  		qca953x_irq_init();
  	else if (soc_is_qca955x())
  		qca955x_irq_init();
@@ -688,10 +688,10 @@
  };
  
  extern enum ath79_soc_type ath79_soc;
-@@ -126,6 +128,26 @@ static inline int soc_is_qca955x(void)
+@@ -126,6 +128,26 @@ static inline int soc_is_qca9558(void)
+ static inline int soc_is_qca955x(void)
+ {
  	return soc_is_qca9556() || soc_is_qca9558();
- }
- 
 +static inline int soc_is_tp9343(void)
 +{
 +	return ath79_soc == ATH79_SOC_TP9343;
@@ -712,6 +712,6 @@
 +	return soc_is_qca9561() || soc_is_qca9563();
 +}
 +
- void ath79_ddr_set_pci_windows(void);
+ }
  
- extern void __iomem *ath79_gpio_base;
+ void ath79_ddr_wb_flush(unsigned int reg);

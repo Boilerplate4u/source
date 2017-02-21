@@ -1,0 +1,11 @@
+--- a/include/uapi/linux/igmp.h
++++ b/include/uapi/linux/igmp.h
+@@ -32,7 +32,7 @@ struct igmphdr {
+ 	__u8 code;		/* For newer IGMP */
+ 	__sum16 csum;
+ 	__be32 group;
+-};
++} __attribute__((packed, aligned(2)));
+ 
+ /* V3 group record types [grec_type] */
+ #define IGMPV3_MODE_IS_INCLUDE		1

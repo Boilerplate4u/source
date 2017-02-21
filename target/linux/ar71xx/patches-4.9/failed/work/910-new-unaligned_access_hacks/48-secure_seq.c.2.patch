@@ -1,0 +1,10 @@
+--- a/net/core/secure_seq.c
++++ b/net/core/secure_seq.c
+@@ -146,6 +148,7 @@ EXPORT_SYMBOL(secure_dccp_sequence_numbe
+ u64 secure_dccpv6_sequence_number(__be32 *saddr, __be32 *daddr,
+ 				  __be16 sport, __be16 dport)
+ {
++	const struct in6_addr *daddr6 = (struct in6_addr *) daddr;
+ 	u32 secret[MD5_MESSAGE_BYTES / 4];
+ 	u32 hash[MD5_DIGEST_WORDS];
+ 	u64 seq;

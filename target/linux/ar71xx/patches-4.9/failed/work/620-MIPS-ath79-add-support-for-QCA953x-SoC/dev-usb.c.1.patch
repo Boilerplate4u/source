@@ -1,0 +1,11 @@
+--- a/arch/mips/ath79/dev-usb.c
++++ b/arch/mips/ath79/dev-usb.c
+@@ -286,6 +310,8 @@ void __init ath79_register_usb(void)
+ 		ar933x_usb_setup();
+ 	else if (soc_is_ar934x())
+ 		ar934x_usb_setup();
++	else if (soc_is_qca953x())
++		qca953x_usb_setup();
+ 	else if (soc_is_qca955x())
+ 		qca955x_usb_setup();
+ 	else

@@ -1,0 +1,9 @@
+--- a/arch/mips/ath79/irq.c
++++ b/arch/mips/ath79/irq.c
+@@ -280,4 +280,6 @@ void __init arch_init_irq(void)
+ 		qca953x_irq_init();
+ 	else if (soc_is_qca955x())
+ 		qca955x_irq_init();
++	else if (soc_is_qca956x() || soc_is_tp9343())
++		qca956x_irq_init();
+ }

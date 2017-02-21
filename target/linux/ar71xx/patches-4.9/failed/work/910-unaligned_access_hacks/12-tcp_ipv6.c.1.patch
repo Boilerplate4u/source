@@ -1,0 +1,17 @@
+--- a/net/ipv6/tcp_ipv6.c
++++ b/net/ipv6/tcp_ipv6.c
+@@ -779,10 +780,10 @@ static void tcp_v6_send_response(const s
+ 	topt = (__be32 *)(t1 + 1);
+ 
+ 	if (tsecr) {
+-		*topt++ = htonl((TCPOPT_NOP << 24) | (TCPOPT_NOP << 16) |
+-				(TCPOPT_TIMESTAMP << 8) | TCPOLEN_TIMESTAMP);
+-		*topt++ = htonl(tsval);
+-		*topt++ = htonl(tsecr);
++		put_unaligned_be32((TCPOPT_NOP << 24) | (TCPOPT_NOP << 16) |
++				(TCPOPT_TIMESTAMP << 8) | TCPOLEN_TIMESTAMP, topt++);
++		put_unaligned_be32(tsval, topt++);
++		put_unaligned_be32(tsecr, topt++);
+ 	}
+ 
+ #ifdef CONFIG_TCP_MD5SIG

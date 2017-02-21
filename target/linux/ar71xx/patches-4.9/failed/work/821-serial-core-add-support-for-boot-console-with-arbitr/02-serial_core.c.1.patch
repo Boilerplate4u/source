@@ -1,0 +1,11 @@
+--- a/drivers/tty/serial/serial_core.c
++++ b/drivers/tty/serial/serial_core.c
+@@ -1909,7 +1911,7 @@ static const struct baud_rates baud_rate
+ 	{   4800, B4800   },
+ 	{   2400, B2400   },
+ 	{   1200, B1200   },
+-	{      0, B38400  }
++	{      0, BOTHER  }
+ };
+ 
+ /**

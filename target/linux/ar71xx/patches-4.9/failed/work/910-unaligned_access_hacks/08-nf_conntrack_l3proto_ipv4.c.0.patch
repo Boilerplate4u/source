@@ -1,0 +1,13 @@
+--- a/net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c
++++ b/net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c
+@@ -41,8 +41,8 @@ static bool ipv4_pkt_to_tuple(const stru
+ 	if (ap == NULL)
+ 		return false;
+ 
+-	tuple->src.u3.ip = ap[0];
+-	tuple->dst.u3.ip = ap[1];
++	tuple->src.u3.ip = net_hdr_word(ap++);
++	tuple->dst.u3.ip = net_hdr_word(ap);
+ 
+ 	return true;
+ }

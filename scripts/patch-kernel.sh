@@ -41,6 +41,11 @@ for i in ${patchdir}/${patchpattern} ; do
     echo ""
 
 
+	# LAHA
+	/usr/bin/printf "Applying \e[48;5;247m${i}\e[0m\n"
+	# echo "${uncomp} ${i} | ${PATCH:-patch} -N -p1 -d ${targetdir}"
+	# LAHA
+
 	# Test if we could reverse the patch and then skip it.
 	# if patch --dry-run --reverse --force -i  >/dev/null 2>&1
 	if ${uncomp} ${i} | ${PATCH:-patch} --dry-run --reverse --force -p1 -d ${targetdir} >/dev/null 2>&1
@@ -50,14 +55,17 @@ for i in ${patchdir}/${patchpattern} ; do
 		mv $i "$patchdir/upstreamed"
 	else # patch not yet applied
 
-		# LAHA
-		/usr/bin/printf "Applying \e[48;5;247m${i}\e[0m\n"
-		# echo "${uncomp} ${i} | ${PATCH:-patch} -N -p1 -d ${targetdir}"
-		# LAHA
+		case $i in
+			# *910-unaligned_access_hacks.patch)
+			# set -x; exit 255 ;;
+		esac
 
 		# echo "Applying ${i} using ${type}: " 
-		${uncomp} ${i} | ${PATCH:-patch} -N -p1 -d ${targetdir}
+		${uncomp} ${i} | ${PATCH:-patch} -f -p1 -d ${targetdir}
 		if [ $? != 0 ] ; then
+			echo ">>>> Patch failed: $i"
+			exit 1
+
 			echo "\n"
 			echo "Patch failed:"
 			echo "##############################################################"

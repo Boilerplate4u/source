@@ -1,0 +1,11 @@
+--- a/net/ipv4/route.c
++++ b/net/ipv4/route.c
+@@ -458,7 +458,7 @@ static struct neighbour *ipv4_neigh_look
+ 	else if (skb)
+ 		pkey = &ip_hdr(skb)->daddr;
+ 
+-	n = __ipv4_neigh_lookup(dev, *(__force u32 *)pkey);
++	n = __ipv4_neigh_lookup(dev, net_hdr_word(pkey));
+ 	if (n)
+ 		return n;
+ 	return neigh_create(&arp_tbl, pkey, dev);

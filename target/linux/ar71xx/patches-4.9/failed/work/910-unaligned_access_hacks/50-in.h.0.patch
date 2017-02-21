@@ -1,0 +1,11 @@
+--- a/include/uapi/linux/in.h
++++ b/include/uapi/linux/in.h
+@@ -83,7 +83,7 @@ enum {
+ /* Internet address. */
+ struct in_addr {
+ 	__be32	s_addr;
+-};
++} __attribute__((packed, aligned(2)));
+ #endif
+ 
+ #define IP_TOS		1

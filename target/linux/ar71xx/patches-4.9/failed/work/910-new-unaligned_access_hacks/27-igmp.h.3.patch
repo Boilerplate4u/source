@@ -1,0 +1,11 @@
+--- a/include/uapi/linux/igmp.h
++++ b/include/uapi/linux/igmp.h
+@@ -78,7 +78,7 @@ struct igmpv3_query {
+ 	__u8 qqic;
+ 	__be16 nsrcs;
+ 	__be32 srcs[0];
+-};
++} __attribute__((packed, aligned(2)));
+ 
+ #define IGMP_HOST_MEMBERSHIP_QUERY	0x11	/* From RFC1112 */
+ #define IGMP_HOST_MEMBERSHIP_REPORT	0x12	/* Ditto */

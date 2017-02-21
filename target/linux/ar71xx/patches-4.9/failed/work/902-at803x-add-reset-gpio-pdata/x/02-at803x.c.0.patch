@@ -1,0 +1,10 @@
+--- a/drivers/net/phy/at803x.c
++++ b/drivers/net/phy/at803x.c
+@@ -243,6 +243,7 @@ static int at803x_resume(struct phy_devi
+ 
+ static int at803x_probe(struct phy_device *phydev)
+ {
++	struct at803x_platform_data *pdata;
+ 	struct device *dev = &phydev->dev;
+ 	struct at803x_priv *priv;
+ 	struct gpio_desc *gpiod_reset;

@@ -1,0 +1,26 @@
+--- a/net/ipv4/tcp_output.c
++++ b/net/ipv4/tcp_output.c
+@@ -500,16 +505,17 @@ static void tcp_options_write(__be32 *pt
+ 			tp->duplicate_sack : tp->selective_acks;
+ 		int this_sack;
+ 
+-		*ptr++ = htonl((TCPOPT_NOP  << 24) |
+-			       (TCPOPT_NOP  << 16) |
+-			       (TCPOPT_SACK <<  8) |
+-			       (TCPOLEN_SACK_BASE + (opts->num_sack_blocks *
++		net_hdr_word(ptr++) =
++			htonl((TCPOPT_NOP << 24) |
++			      (TCPOPT_NOP << 16) |
++			      (TCPOPT_SACK << 8) |
++			      (TCPOLEN_SACK_BASE + (opts->num_sack_blocks *
+ 						     TCPOLEN_SACK_PERBLOCK)));
+ 
+ 		for (this_sack = 0; this_sack < opts->num_sack_blocks;
+ 		     ++this_sack) {
+-			*ptr++ = htonl(sp[this_sack].start_seq);
+-			*ptr++ = htonl(sp[this_sack].end_seq);
++			net_hdr_word(ptr++) = htonl(sp[this_sack].start_seq);
++			net_hdr_word(ptr++) = htonl(sp[this_sack].end_seq);
+ 		}
+ 
+ 		tp->rx_opt.dsack = 0;

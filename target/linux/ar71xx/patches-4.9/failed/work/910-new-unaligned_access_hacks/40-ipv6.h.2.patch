@@ -1,0 +1,11 @@
+--- a/include/net/ipv6.h
++++ b/include/net/ipv6.h
+@@ -477,6 +477,8 @@ static inline bool ipv6_prefix_equal(con
+ 	const __be32 *a1 = addr1->s6_addr32;
+ 	const __be32 *a2 = addr2->s6_addr32;
+ 	unsigned int pdw, pbi;
++	/* Used for last <32-bit fraction of prefix */
++	u32 pbia1, pbia2;
+ 
+ 	/* check complete u32 in prefix */
+ 	pdw = prefixlen >> 5;

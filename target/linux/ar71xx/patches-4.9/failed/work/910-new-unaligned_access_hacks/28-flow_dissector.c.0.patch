@@ -1,0 +1,11 @@
+--- a/net/core/flow_dissector.c
++++ b/net/core/flow_dissector.c
+@@ -95,7 +95,7 @@ __be32 __skb_flow_get_ports(const struct
+ 		ports = __skb_header_pointer(skb, thoff + poff,
+ 					     sizeof(_ports), data, hlen, &_ports);
+ 		if (ports)
+-			return *ports;
++			return (__be32)net_hdr_word(ports);
+ 	}
+ 
+ 	return 0;

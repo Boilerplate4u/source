@@ -1,0 +1,17 @@
+--- a/drivers/tty/serial/serial_core.c
++++ b/drivers/tty/serial/serial_core.c
+@@ -1948,10 +1950,13 @@ uart_set_options(struct uart_port *port,
+ 	 * Construct a cflag setting.
+ 	 */
+ 	for (i = 0; baud_rates[i].rate; i++)
+-		if (baud_rates[i].rate <= baud)
++		if (baud_rates[i].rate == baud)
+ 			break;
+ 
+ 	termios.c_cflag |= baud_rates[i].cflag;
++	if (!baud_rates[i].rate) {
++		termios.c_ospeed = baud;
++	}
+ 
+ 	if (bits == 7)
+ 		termios.c_cflag |= CS7;

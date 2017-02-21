@@ -1,0 +1,36 @@
+--- a/drivers/gpio/gpio-74x164.c
++++ b/drivers/gpio/gpio-74x164.c
+@@ -130,18 +141,28 @@ static int gen_74x164_probe(struct spi_d
+ 	chip->gpio_chip.set = gen_74x164_set_value;
+ 	chip->gpio_chip.base = -1;
+ 
+-	if (of_property_read_u32(spi->dev.of_node, "registers-number",
+-				 &chip->registers)) {
+-		dev_err(&spi->dev,
+-			"Missing registers-number property in the DT.\n");
+-		return -EINVAL;
++	if (np) {
++		if (of_property_read_u32(spi->dev.of_node, "registers-number", &chip->registers)) {
++			dev_err(&spi->dev, "Missing registers-number property in the DT.\n");
++			ret = -EINVAL;
++			goto exit_destroy;
++		}
++	} else if (pdata) {
++		chip->gpio_chip.base = pdata->base;
++		chip->registers = pdata->num_registers;
+ 	}
+ 
++	if (!chip->registers)
++		chip->registers = 1;
++
+ 	chip->gpio_chip.ngpio = GEN_74X164_NUMBER_GPIOS * chip->registers;
+ 	chip->buffer = devm_kzalloc(&spi->dev, chip->registers, GFP_KERNEL);
+ 	if (!chip->buffer)
+ 		return -ENOMEM;
+ 
++	if (pdata && pdata->init_data)
++		memcpy(chip->buffer, pdata->init_data, chip->registers);
++
+ 	chip->gpio_chip.can_sleep = true;
+ 	chip->gpio_chip.dev = &spi->dev;
+ 	chip->gpio_chip.owner = THIS_MODULE;

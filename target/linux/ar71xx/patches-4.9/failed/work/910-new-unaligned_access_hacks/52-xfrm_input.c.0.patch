@@ -1,0 +1,13 @@
+--- a/net/xfrm/xfrm_input.c
++++ b/net/xfrm/xfrm_input.c
+@@ -154,8 +154,8 @@ int xfrm_parse_spi(struct sk_buff *skb,
+ 	if (!pskb_may_pull(skb, hlen))
+ 		return -EINVAL;
+ 
+-	*spi = *(__be32 *)(skb_transport_header(skb) + offset);
+-	*seq = *(__be32 *)(skb_transport_header(skb) + offset_seq);
++	*spi = net_hdr_word(skb_transport_header(skb) + offset);
++	*seq = net_hdr_word(skb_transport_header(skb) + offset_seq);
+ 	return 0;
+ }
+ 

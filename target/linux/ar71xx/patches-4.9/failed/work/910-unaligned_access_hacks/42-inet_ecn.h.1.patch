@@ -1,0 +1,11 @@
+--- a/include/net/inet_ecn.h
++++ b/include/net/inet_ecn.h
+@@ -134,7 +134,7 @@ static inline int IP6_ECN_set_ce(struct
+ 
+ static inline void IP6_ECN_clear(struct ipv6hdr *iph)
+ {
+-	*(__be32*)iph &= ~htonl(INET_ECN_MASK << 20);
++	net_hdr_word(iph) &= ~htonl(INET_ECN_MASK << 20);
+ }
+ 
+ static inline void ipv6_copy_dscp(unsigned int dscp, struct ipv6hdr *inner)

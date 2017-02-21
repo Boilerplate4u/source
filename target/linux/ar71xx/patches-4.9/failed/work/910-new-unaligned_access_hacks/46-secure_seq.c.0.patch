@@ -1,0 +1,16 @@
+--- a/net/core/secure_seq.c
++++ b/net/core/secure_seq.c
+@@ -46,11 +46,12 @@ __u32 secure_tcpv6_sequence_number(const
+ 	u32 secret[MD5_MESSAGE_BYTES / 4];
+ 	u32 hash[MD5_DIGEST_WORDS];
+ 	u32 i;
++	const struct in6_addr *daddr6 = (struct in6_addr *) daddr;
+ 
+ 	net_secret_init();
+ 	memcpy(hash, saddr, 16);
+ 	for (i = 0; i < 4; i++)
+-		secret[i] = net_secret[i] + (__force u32)daddr[i];
++		secret[i] = net_secret[i] + (__force u32)daddr6->s6_addr32[i];
+ 	secret[4] = net_secret[4] +
+ 		(((__force u16)sport << 16) + (__force u16)dport);
+ 	for (i = 5; i < MD5_MESSAGE_BYTES / 4; i++)

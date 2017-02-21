@@ -1,0 +1,20 @@
+--- a/net/ipv4/tcp_output.c
++++ b/net/ipv4/tcp_output.c
+@@ -522,13 +528,14 @@ static void tcp_options_write(__be32 *pt
+ 
+ 		if (foc->exp) {
+ 			len = TCPOLEN_EXP_FASTOPEN_BASE + foc->len;
+-			*ptr = htonl((TCPOPT_EXP << 24) | (len << 16) |
++			net_hdr_word(ptr) =
++				htonl((TCPOPT_EXP << 24) | (len << 16) |
+ 				     TCPOPT_FASTOPEN_MAGIC);
+ 			p += TCPOLEN_EXP_FASTOPEN_BASE;
+ 		} else {
+ 			len = TCPOLEN_FASTOPEN_BASE + foc->len;
+-			*p++ = TCPOPT_FASTOPEN;
+-			*p++ = len;
++			net_hdr_word(p++) = TCPOPT_FASTOPEN;
++			net_hdr_word(p++) = len;
+ 		}
+ 
+ 		memcpy(p, foc->val, foc->len);

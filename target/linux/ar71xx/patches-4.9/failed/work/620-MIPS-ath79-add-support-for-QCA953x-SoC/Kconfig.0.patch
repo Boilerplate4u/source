@@ -1,0 +1,13 @@
+--- a/arch/mips/ath79/Kconfig
++++ b/arch/mips/ath79/Kconfig
+@@ -116,6 +116,10 @@ config SOC_AR934X
+ 	select PCI_AR724X if PCI
+ 	def_bool n
+ 
++config SOC_QCA953X
++	select USB_ARCH_HAS_EHCI
++	def_bool n
++
+ config SOC_QCA955X
+ 	select HW_HAS_PCI
+ 	select PCI_AR724X if PCI

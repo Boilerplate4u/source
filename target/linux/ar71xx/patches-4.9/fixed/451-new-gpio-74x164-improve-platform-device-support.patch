@@ -1,0 +1,70 @@
+--- a/drivers/gpio/gpio-74x164.c
++++ b/drivers/gpio/gpio-74x164.c
+@@ -12,6 +12,7 @@
+ #include <linux/init.h>
+ #include <linux/mutex.h>
+ #include <linux/spi/spi.h>
++#include <linux/spi/74x164.h>
+ #include <linux/gpio.h>
+ #include <linux/of_gpio.h>
+ #include <linux/slab.h>
+--- a/drivers/gpio/gpio-74x164.c
++++ b/drivers/gpio/gpio-74x164.c
+@@ -104,8 +104,18 @@ static int gen_74x164_direction_output(struct gpio_chip *gc,
+ static int gen_74x164_probe(struct spi_device *spi)
+ {
+ 	struct gen_74x164_chip *chip;
++	struct gen_74x164_chip_platform_data *pdata;
++	struct device_node *np;
++
+ 	u32 nregs;
+ 	int ret;
++	pdata = spi->dev.platform_data;
++	np = spi->dev.of_node;
++
++	if (!np && !pdata) {
++		dev_err(&spi->dev, "No configuration data available.\n");
++	 	return -EINVAL;
++	}
+ 
+ 	/*
+ 	 * bits_per_word cannot be configured in platform data
+--- a/drivers/gpio/gpio-74x164.c
++++ b/drivers/gpio/gpio-74x164.c
+@@ -181,17 +181,19 @@ static int gen_74x164_remove(struct spi_device *spi)
+ 	return 0;
+ }
+ 
++#ifdef CONFIG_OF
+ static const struct of_device_id gen_74x164_dt_ids[] = {
+ 	{ .compatible = "fairchild,74hc595" },
+ 	{ .compatible = "nxp,74lvc594" },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, gen_74x164_dt_ids);
++#endif
+ 
+ static struct spi_driver gen_74x164_driver = {
+ 	.driver = {
+ 		.name		= "74x164",
+-		.of_match_table	= gen_74x164_dt_ids,
++		.of_match_table = of_match_ptr(gen_74x164_dt_ids),
+ 	},
+ 	.probe		= gen_74x164_probe,
+ 	.remove		= gen_74x164_remove,
+--- /dev/null
++++ b/include/linux/spi/74x164.h
+@@ -0,0 +1,13 @@
++#ifndef LINUX_SPI_74X164_H
++#define LINUX_SPI_74X164_H
++
++struct gen_74x164_chip_platform_data {
++	/* number assigned to the first GPIO */
++	unsigned        base;
++	/* number of chained registers */
++	unsigned	num_registers;
++	/* address of a buffer containing initial data */
++	u8		*init_data;
++};
++
++#endif

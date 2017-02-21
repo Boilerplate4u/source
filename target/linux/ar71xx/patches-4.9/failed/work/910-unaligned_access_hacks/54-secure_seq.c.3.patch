@@ -1,0 +1,11 @@
+--- a/net/core/secure_seq.c
++++ b/net/core/secure_seq.c
+@@ -154,7 +157,7 @@ u64 secure_dccpv6_sequence_number(__be32
+ 	net_secret_init();
+ 	memcpy(hash, saddr, 16);
+ 	for (i = 0; i < 4; i++)
+-		secret[i] = net_secret[i] + (__force u32)daddr[i];
++		secret[i] = net_secret[i] + (__force u32)daddr6->s6_addr32[i];
+ 	secret[4] = net_secret[4] +
+ 		(((__force u16)sport << 16) + (__force u16)dport);
+ 	for (i = 5; i < MD5_MESSAGE_BYTES / 4; i++)
